@@ -1,0 +1,24 @@
+{
+  "runtime": "ONNX Runtime CPU; browser checked separately",
+  "quantization": "dynamic int8 MatMul and Gather",
+  "results": [
+    {
+      "prompt": "What is a CPU?",
+      "response": "A CPU (Central Processing Unit) is an electronic component that performs calculations and operations to perform tasks such as running software applications, processing data from sensors, and performing other related tasks.",
+      "seconds": 1.539,
+      "generated_tokens": 36
+    },
+    {
+      "prompt": "What is the capital city of Nigeria?",
+      "response": "The capital city of Nigeria is Abuja.",
+      "seconds": 0.432,
+      "generated_tokens": 9
+    },
+    {
+      "prompt": "What is 7 plus 5? Reply with just the number.",
+      "response": "The answer to this question would be:",
+      "seconds": 0.396,
+      "generated_tokens": 8
+    }
+  ]
+}

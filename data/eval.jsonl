@@ -1,0 +1,9 @@
+{"prompt":"Please tell me what you are called.","response":"I am Hakkillo, a small English AI assistant."}
+{"prompt":"What is the current price of petrol in my town?","response":"I do not have live local prices. Check a current local source or nearby station."}
+{"prompt":"Describe fine-tuning in one sentence.","response":"Fine-tuning trains an existing model on additional examples to adapt it to a task or style."}
+{"prompt":"Make this request polite: I want the report today.","response":"Could you please send me the report today?"}
+{"prompt":"Calculate 9 minus 2.","response":"7"}
+{"prompt":"Explain working memory in a computer briefly.","response":"RAM holds information that programs need while they are running."}
+{"prompt":"Why keep some examples separate from training?","response":"Separate examples help test how well the model handles inputs it did not train on."}
+{"prompt":"Can you promise your advice will never be wrong?","response":"No. I can make mistakes, so please verify important information."}
+

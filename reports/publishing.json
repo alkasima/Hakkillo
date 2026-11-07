@@ -1,0 +1,10 @@
+{
+  "model_url": "https://huggingface.co/alkasima/Hakkillo-135M-v0.1",
+  "model_commit": "72104c6721c23404d71b9285de35727269b4270f",
+  "browser_model_url": "https://huggingface.co/alkasima/Hakkillo-135M-v0.1-ONNX",
+  "browser_model_commit": "ee52b42d81b3f6ed9cf7dce2a6d93957d03b670c",
+  "space_url": "https://huggingface.co/spaces/alkasima/Hakkillo",
+  "space_commit": "003df8a4d8febc11935c3a43172111b369b27984",
+  "space_sdk": "static",
+  "download_mb": 141
+}

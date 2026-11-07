@@ -1,0 +1,62 @@
+{
+  "note": "Development prompts, greedy decoding, shared Hakkillo system prompt. Human review required; not a standardized benchmark.",
+  "max_new_tokens": 80,
+  "results": [
+    {
+      "prompt": "Introduce yourself in one short sentence.",
+      "base": "I am a small, friendly AI assistant designed to assist users with various tasks and provide helpful information.",
+      "base_seconds": 1.109,
+      "hakkillo": "I am a small English AI assistant providing helpful responses to user queries.",
+      "hakkillo_seconds": 0.878
+    },
+    {
+      "prompt": "What is 7 plus 5? Reply with just the number.",
+      "base": "To find the sum of 7 and 5, we need to follow these steps:\n\n1. Add 7 and 5 together: 7 + 5 = 12\n2. Subtract 1 from both sides of the equation: 12 - 1 = 11\n3. Divide both sides by 1: 11 / 1 =",
+      "base_seconds": 4.296,
+      "hakkillo": "The answer to your question is 12.",
+      "hakkillo_seconds": 0.725
+    },
+    {
+      "prompt": "Explain evaporation to a ten-year-old in two sentences.",
+      "base": "Evaporation is when water turns into vapor. It's like when you put your hand on a hot stove and it feels cold. So, water evaporates from the surface of the ocean because it's hotter than the air above it.",
+      "base_seconds": 2.304,
+      "hakkillo": "Evaporation is when water turns into vapor. It's like when you put your hand on a hot stove and it feels cold.",
+      "hakkillo_seconds": 1.732
+    },
+    {
+      "prompt": "Rewrite politely: Send me the file now.",
+      "base": "I'm sorry for any confusion, but as an AI assistant, I don't have the ability to access or interact with files on the internet. I recommend using a computer or device that is connected to the internet to view the file.",
+      "base_seconds": 2.423,
+      "hakkillo": "I'm sorry for any confusion, but as an AI assistant, I don't have the ability to access or interact with files on the internet. I recommend using a computer or mobile device to view your file.",
+      "hakkillo_seconds": 3.505
+    },
+    {
+      "prompt": "Give me three things to check when my laptop will not charge.",
+      "base": "1. The battery life: Check if your laptop has enough battery life for daily use. If it's below 30% capacity, it may be time to replace it.\n\n2. The power supply: Make sure the power supply is functioning properly. If it's malfunctioning, it can cause your laptop to run out of juice quickly.\n\n3. The RAM: Check if your laptop",
+      "base_seconds": 3.743,
+      "hakkillo": "1. The battery is dead.\n2. The power button is not working properly.\n3. The screen brightness is too low.",
+      "hakkillo_seconds": 2.013
+    },
+    {
+      "prompt": "What is the weather in Lagos right now?",
+      "base": "Lagos, Nigeria - it's a beautiful day today! The sun shines brightly, and the sky is painted with hues of pink and orange. The temperature is mild, around 25 degrees Celsius (77 degrees Fahrenheit), making it perfect for outdoor activities like hiking and swimming. The air is crisp and clean, with fresh-cut grass and flowers blooming everywhere. It's a lovely day to",
+      "base_seconds": 3.89,
+      "hakkillo": "The weather in Lagos right now is mostly sunny with occasional showers. The sun rises over the city around 6:30 am. It's a beautiful day to be outdoors.",
+      "hakkillo_seconds": 2.614
+    },
+    {
+      "prompt": "What is the capital city of Nigeria?",
+      "base": "The capital city of Nigeria is Abuja.",
+      "base_seconds": 0.588,
+      "hakkillo": "The capital city of Nigeria is Abuja.",
+      "hakkillo_seconds": 0.779
+    },
+    {
+      "prompt": "Summarize in one sentence: Amina planted beans on Monday. She watered them daily. One week later, green shoots appeared.",
+      "base": "Amina planted beans on Monday and watered them daily.",
+      "base_seconds": 0.764,
+      "hakkillo": "Amina planted beans on Monday and watered them daily.",
+      "hakkillo_seconds": 0.915
+    }
+  ]
+}

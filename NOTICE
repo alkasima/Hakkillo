@@ -1,0 +1,11 @@
+Hakkillo
+Copyright 2026 Hakkillo contributors
+
+Hakkillo uses HuggingFaceTB/SmolLM2-135M-Instruct, developed by Hugging Face
+and distributed under the Apache License, Version 2.0.
+Upstream: https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct
+Pinned revision: 12fd25f77366fa6b3b4b768ec3050bf629380bac
+
+Hakkillo v0.1 adds project code, synthetic starter examples, and a LoRA
+adaptation of the base model's attention query and value projections.
+It is not a model pretrained from scratch and is not endorsed by Hugging Face.

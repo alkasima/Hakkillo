@@ -1,0 +1,10 @@
+# Optional ONNX export tools, in a separate environment from the Gradio app.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.10.0+cpu
+transformers==4.57.6
+peft==0.18.1
+huggingface-hub==0.36.2
+optimum-onnx[onnxruntime]==0.1.0
+onnx==1.23.2
+onnxruntime==1.23.2
+requests==2.34.2
