@@ -6,6 +6,7 @@
 *.yml text eol=lf
 *.txt text eol=lf
 *.js text eol=lf
+*.mjs text eol=lf
 *.html text eol=lf
 *.css text eol=lf
 data/*.jsonl whitespace=-blank-at-eof

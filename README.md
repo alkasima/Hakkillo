@@ -21,6 +21,8 @@ Open **http://127.0.0.1:7860**. The first reply downloads the base model (about 
 
 The hosted Space uses a separate browser runtime: a static website downloads about 141 MB of model/tokenizer files and runs the merged, quantized Hakkillo model on the visitor's CPU. It needs no API key. Responses may differ from the Python adapter because of quantization and runtime differences. See [browser export instructions](BROWSER_EXPORT.md).
 
+The demo has three starter prompts, including a labelled rewriting challenge that v0.1 struggles with. Each starter opens a fresh conversation. After a reply, **Copy last exchange** prepares the prompt, response, earlier turns used, and exact model revision for a reproducible report. Review the copied text before posting it to GitHub; the app does not submit feedback automatically.
+
 Until an adapter is available, the app explicitly shows **base-model preview**. To download the published Hakkillo adapter, once it is available:
 
 ```powershell

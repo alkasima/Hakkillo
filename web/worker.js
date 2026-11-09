@@ -22,7 +22,11 @@ self.addEventListener('message', async ({ data }) => {
           }
         },
       });
-      self.postMessage({ type: 'ready' });
+      self.postMessage({ type: 'ready', metadata: {
+        model_id: config.model_id, revision: config.revision,
+        library_version: '3.8.1', device: 'wasm CPU', dtype: 'q8',
+        max_new_tokens: 64, repetition_penalty: 1.08,
+      } });
     } else if (data.type === 'generate') {
       if (!generator) throw new Error('Load the model first');
       const started = performance.now();

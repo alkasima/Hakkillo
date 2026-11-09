@@ -23,22 +23,34 @@
       <div class="panel-heading"><div><span class="dot" aria-hidden="true"></span> Hakkillo <span class="muted">/ browser demo</span></div><button id="clear" class="text-button" disabled>New chat</button></div>
       <div id="welcome" class="welcome">
         <h2>Small enough to run right here.</h2>
-        <p>Load the model once, then chat on this device. The download is about <strong id="download-size">170 MB</strong> and may be cached by your browser.</p>
+        <p>Load the model once, then chat on this device. The download is about <strong id="download-size">141 MB</strong> and may be cached by your browser.</p>
         <button id="load" class="primary">Load Hakkillo <span aria-hidden="true">↗</span></button>
         <p class="fine">Your messages are processed in this browser. Model files are downloaded from Hugging Face; app libraries come from jsDelivr. No API key is needed.</p>
       </div>
       <div id="status" role="status" aria-live="polite">Ready when you are.</div>
       <progress id="progress" max="100" value="0" hidden aria-label="Model download progress"></progress>
       <div id="messages" role="log" aria-label="Conversation" aria-live="polite"></div>
-      <div id="suggestions" hidden>
-        <button class="suggestion">What is a CPU?</button>
-        <button class="suggestion">What is the capital of Nigeria?</button>
-      </div>
+      <section class="starter-panel" aria-label="Starter prompts">
+        <p class="starter-help">Try a starter prompt after loading. Each one starts a fresh conversation so results are easier to compare.</p>
+        <div id="suggestions">
+          <button type="button" class="suggestion" data-case="cpu" data-prompt="What is a CPU?" disabled>What is a CPU?</button>
+          <button type="button" class="suggestion" data-case="capital" data-prompt="What is the capital of Nigeria?" disabled>What is the capital of Nigeria?</button>
+          <button type="button" class="suggestion challenge" data-case="rewrite-challenge" data-prompt="Rewrite politely: Send me the file now." disabled><span>Known challenge</span> Rewrite politely: Send me the file now.</button>
+        </div>
+        <p class="starter-help">For the challenge, look for a polite rewrite. v0.1 may instead say it cannot access files. That mistake is useful feedback.</p>
+      </section>
       <form id="chat-form">
         <label class="sr-only" for="prompt">Your message</label>
         <textarea id="prompt" maxlength="1200" rows="2" placeholder="Load Hakkillo to start a conversation…" disabled></textarea>
         <button id="send" class="primary" type="submit" disabled aria-label="Send message">Send ↑</button>
       </form>
+      <section id="feedback-panel" class="feedback-panel" aria-label="Share model feedback" hidden>
+        <p><strong>Found something confusing?</strong> Copy the last prompt and reply, review the text, then paste it into a <a href="https://github.com/alkasima/Hakkillo/issues/new" target="_blank" rel="noopener">GitHub issue</a>. The copy includes the model version and any earlier turns used for that reply. Nothing is submitted automatically.</p>
+        <button id="copy-feedback" type="button" class="text-button">Copy last exchange</button>
+        <span id="feedback-status" role="status" aria-live="polite"></span>
+        <label id="feedback-fallback-label" class="sr-only" for="feedback-fallback">Feedback text to copy manually</label>
+        <textarea id="feedback-fallback" readonly hidden aria-labelledby="feedback-fallback-label"></textarea>
+      </section>
     </section>
     <aside class="note"><strong>An experiment, with honest limits.</strong> This first release can misunderstand requests, invent facts, and give incorrect answers. It has no live web access. Start with short English questions and check important information.</aside>
     <footer><span>Built on SmolLM2 by Hugging Face.</span><nav aria-label="Project links"><a href="https://github.com/alkasima/Hakkillo" target="_blank" rel="noopener">GitHub ↗</a><a href="https://huggingface.co/alkasima/Hakkillo-135M-v0.1" target="_blank" rel="noopener">Model card ↗</a><a href="https://github.com/alkasima/Hakkillo/blob/main/VISION.md" target="_blank" rel="noopener">The roadmap ↗</a></nav></footer>

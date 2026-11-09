@@ -100,7 +100,7 @@ An experimental 135M English assistant. Click Load Hakkillo to download the quan
 [Code and roadmap](https://github.com/alkasima/Hakkillo) · [Model card](https://huggingface.co/{args.owner}/Hakkillo-135M-v0.1)
 ''',encoding='utf-8')
 api.create_repo(space_id,repo_type='space',space_sdk='static',private=False,exist_ok=True)
-space_commit=api.upload_folder(repo_id=space_id,repo_type='space',folder_path=stage,allow_patterns=['*.html','*.css','*.js','*.json','*.md','LICENSE','NOTICE'],commit_message='Launch free Hakkillo browser CPU demo')
+space_commit=api.upload_folder(repo_id=space_id,repo_type='space',folder_path=stage,allow_patterns=['*.html','*.css','*.js','*.mjs','*.json','*.md','LICENSE','NOTICE'],commit_message='Launch free Hakkillo browser CPU demo')
 report_path=root/'reports/publishing.json'
 result=json.loads(report_path.read_text(encoding='utf-8')) if report_path.exists() else {}
 adapter=api.model_info(f'{args.owner}/Hakkillo-135M-v0.1')
