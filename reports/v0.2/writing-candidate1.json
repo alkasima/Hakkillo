@@ -1,0 +1,691 @@
+{
+  "dataset": "data\\v0.2\\writing_dev.jsonl",
+  "reserved_holdout_used": false,
+  "data_sha256": "7fff28128b528d3a0a973035b1268b2f41d522b14ce271a161c474133a5c9a92",
+  "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "base_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "repetition_penalty": 1.08,
+  "max_new_tokens": 64,
+  "decoding": "greedy, float32 CPU, existing Hakkillo system prompt",
+  "caveat": "Synthetic prompts. Normalized reference matches and literal-preservation checks are diagnostics, not semantic accuracy. Alternative good rewrites require human review.",
+  "models": {
+    "candidate1": {
+      "adapter": "artifacts/hakkillo-135m-v0.2-writing-candidate1",
+      "summary": {
+        "all": {
+          "cases": 50,
+          "reference_matches": 43,
+          "preservation_checks_passed": 16,
+          "preservation_cases": 16,
+          "median_seconds": 0.805
+        },
+        "grammar": {
+          "cases": 20,
+          "reference_matches": 17,
+          "preservation_checks_passed": 3,
+          "preservation_cases": 3,
+          "median_seconds": 0.723
+        },
+        "polite": {
+          "cases": 20,
+          "reference_matches": 16,
+          "preservation_checks_passed": 3,
+          "preservation_cases": 3,
+          "median_seconds": 0.849
+        },
+        "preservation": {
+          "cases": 10,
+          "reference_matches": 10,
+          "preservation_checks_passed": 10,
+          "preservation_cases": 10,
+          "median_seconds": 1.115
+        }
+      },
+      "results": [
+        {
+          "id": "g01",
+          "category": "grammar",
+          "prompt": "Correct the grammar. Return only the corrected sentence: He don't enjoy swimming.",
+          "reference": "He doesn't enjoy swimming.",
+          "response": "He doesn't enjoy swimming.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.746
+        },
+        {
+          "id": "g02",
+          "category": "grammar",
+          "prompt": "Fix this sentence without explaining: They was waiting outside.",
+          "reference": "They were waiting outside.",
+          "response": "They were waiting outside.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.474
+        },
+        {
+          "id": "g03",
+          "category": "grammar",
+          "prompt": "Correct the grammar and return just the sentence: I has three pencils.",
+          "reference": "I have three pencils.",
+          "response": "I have three pencils.",
+          "reference_match": true,
+          "preserve": [
+            "three"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.507
+        },
+        {
+          "id": "g04",
+          "category": "grammar",
+          "prompt": "Fix the grammar: We buyed fruit yesterday.",
+          "reference": "We bought fruit yesterday.",
+          "response": "We bought fruit yesterday.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.49
+        },
+        {
+          "id": "g05",
+          "category": "grammar",
+          "prompt": "Return the corrected sentence only: The children is laughing.",
+          "reference": "The children are laughing.",
+          "response": "The children are laughing.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.723
+        },
+        {
+          "id": "g06",
+          "category": "grammar",
+          "prompt": "Correct this sentence: She have finished the puzzle.",
+          "reference": "She has finished the puzzle.",
+          "response": "She has completed the puzzle.",
+          "reference_match": false,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.601
+        },
+        {
+          "id": "g07",
+          "category": "grammar",
+          "prompt": "Fix only the grammar: There is two chairs in the kitchen.",
+          "reference": "There are two chairs in the kitchen.",
+          "response": "There are two chairs in the kitchen.",
+          "reference_match": true,
+          "preserve": [
+            "two"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.802
+        },
+        {
+          "id": "g08",
+          "category": "grammar",
+          "prompt": "Correct the grammar: My brother can sings well.",
+          "reference": "My brother can sing well.",
+          "response": "My brother can sing well.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.7
+        },
+        {
+          "id": "g09",
+          "category": "grammar",
+          "prompt": "Return only the grammatical version: I didn't saw the bird.",
+          "reference": "I didn't see the bird.",
+          "response": "I didn't see the bird.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.885
+        },
+        {
+          "id": "g10",
+          "category": "grammar",
+          "prompt": "Correct the article in this sentence: He is a honest worker.",
+          "reference": "He is an honest worker.",
+          "response": "He is a honest worker.",
+          "reference_match": false,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.753
+        },
+        {
+          "id": "g11",
+          "category": "grammar",
+          "prompt": "Fix this sentence: These box are heavy.",
+          "reference": "These boxes are heavy.",
+          "response": "These boxes are heavy.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.655
+        },
+        {
+          "id": "g12",
+          "category": "grammar",
+          "prompt": "Correct the grammar. Output only the sentence: The baby sleep every afternoon.",
+          "reference": "The baby sleeps every afternoon.",
+          "response": "The baby sleeps every afternoon.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.723
+        },
+        {
+          "id": "g13",
+          "category": "grammar",
+          "prompt": "Fix the preposition: We have lived here since three years.",
+          "reference": "We have lived here for three years.",
+          "response": "We have lived here for three years.",
+          "reference_match": true,
+          "preserve": [
+            "three"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.875
+        },
+        {
+          "id": "g14",
+          "category": "grammar",
+          "prompt": "Correct the grammar without changing the meaning: The keys is on the shelf.",
+          "reference": "The keys are on the shelf.",
+          "response": "The keys are on the shelf.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.762
+        },
+        {
+          "id": "g15",
+          "category": "grammar",
+          "prompt": "Fix this sentence and add no explanation: I am more taller than my cousin.",
+          "reference": "I am taller than my cousin.",
+          "response": "I am taller than my cousin.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.696
+        },
+        {
+          "id": "g16",
+          "category": "grammar",
+          "prompt": "Correct this question: Does she likes oranges?",
+          "reference": "Does she like oranges?",
+          "response": "Does Hakkillo like oranges?",
+          "reference_match": false,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.66
+        },
+        {
+          "id": "g17",
+          "category": "grammar",
+          "prompt": "Correct the grammar: My parents has a garden.",
+          "reference": "My parents have a garden.",
+          "response": "My parents have a garden.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.67
+        },
+        {
+          "id": "g18",
+          "category": "grammar",
+          "prompt": "Fix the verb form: I have already ate breakfast.",
+          "reference": "I have already eaten breakfast.",
+          "response": "I have already eaten breakfast.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.798
+        },
+        {
+          "id": "g19",
+          "category": "grammar",
+          "prompt": "Correct any grammar errors. If the sentence is already correct, repeat it unchanged: Please put the book on the table.",
+          "reference": "Please put the book on the table.",
+          "response": "Please put the book on the table.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.933
+        },
+        {
+          "id": "g20",
+          "category": "grammar",
+          "prompt": "Fix grammar only. Keep an already correct sentence unchanged: The train leaves at noon.",
+          "reference": "The train leaves at noon.",
+          "response": "The train leaves at noon.",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.772
+        },
+        {
+          "id": "p01",
+          "category": "polite",
+          "prompt": "Rewrite this politely. Return only the rewritten message: Give me the timetable.",
+          "reference": "Could you please give me the timetable?",
+          "response": "Could you please give me the timetable?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.831
+        },
+        {
+          "id": "p02",
+          "category": "polite",
+          "prompt": "Make this request polite: Move your bag off this chair.",
+          "reference": "Could you please move your bag off this chair?",
+          "response": "Could you please move your bag off this chair?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.958
+        },
+        {
+          "id": "p03",
+          "category": "polite",
+          "prompt": "Rewrite politely while keeping the deadline: Answer my email today.",
+          "reference": "Could you please answer my email today?",
+          "response": "Could you please answer my email today?",
+          "reference_match": true,
+          "preserve": [
+            "today"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.817
+        },
+        {
+          "id": "p04",
+          "category": "polite",
+          "prompt": "Make this sentence more polite and output only the result: Turn down the radio.",
+          "reference": "Could you please turn down the radio?",
+          "response": "Could you please turn down the radio?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.756
+        },
+        {
+          "id": "p05",
+          "category": "polite",
+          "prompt": "Rewrite as a polite request: Tell me where the library is.",
+          "reference": "Could you please tell me where the library is?",
+          "response": "Could you please tell me where the library is?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.868
+        },
+        {
+          "id": "p06",
+          "category": "polite",
+          "prompt": "Rewrite the following politely without answering it: Stop interrupting me.",
+          "reference": "Could you please let me finish speaking?",
+          "response": "Could you please stop interrupting me?",
+          "reference_match": false,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.705
+        },
+        {
+          "id": "p07",
+          "category": "polite",
+          "prompt": "Make this message polite: Lend me your umbrella.",
+          "reference": "Could you please lend me your umbrella?",
+          "response": "Could you please lend me my umbrella?",
+          "reference_match": false,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.932
+        },
+        {
+          "id": "p08",
+          "category": "polite",
+          "prompt": "Rewrite politely, with no introduction: Explain the last paragraph again.",
+          "reference": "Could you please explain the last paragraph again?",
+          "response": "Could you please explain the last paragraph again?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.95
+        },
+        {
+          "id": "p09",
+          "category": "polite",
+          "prompt": "Make this request polite, keeping its timing: Bring the receipt tomorrow.",
+          "reference": "Could you please bring the receipt tomorrow?",
+          "response": "Could you please bring the receipt tomorrow?",
+          "reference_match": true,
+          "preserve": [
+            "tomorrow"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.884
+        },
+        {
+          "id": "p10",
+          "category": "polite",
+          "prompt": "Rewrite the request politely; do not perform the task: Check this calculation.",
+          "reference": "Could you please check this calculation?",
+          "response": "Could you please check this calculation?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.808
+        },
+        {
+          "id": "p11",
+          "category": "polite",
+          "prompt": "Rewrite this message politely: Give me access to the folder.",
+          "reference": "Could you please give me access to the folder?",
+          "response": "Could you please give me access to the folder?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.917
+        },
+        {
+          "id": "p12",
+          "category": "polite",
+          "prompt": "Make the following request polite: Send the meeting link.",
+          "reference": "Could you please send the meeting link?",
+          "response": "Could you please send the meeting link?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.78
+        },
+        {
+          "id": "p13",
+          "category": "polite",
+          "prompt": "Rewrite politely. Output just the rewritten request: Fix the spelling in my name.",
+          "reference": "Could you please correct the spelling of my name?",
+          "response": "Could you please fix the spelling in my name?",
+          "reference_match": false,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.983
+        },
+        {
+          "id": "p14",
+          "category": "polite",
+          "prompt": "Make this request polite without adding new information: Wait until I finish.",
+          "reference": "Could you please wait until I finish?",
+          "response": "Could you please wait until I finish?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.733
+        },
+        {
+          "id": "p15",
+          "category": "polite",
+          "prompt": "Rewrite politely: Show me the price list.",
+          "reference": "Could you please show me the price list?",
+          "response": "Could you please show me the price list?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.811
+        },
+        {
+          "id": "p16",
+          "category": "polite",
+          "prompt": "Make this request polite. Keep the day unchanged: Return my charger on Friday.",
+          "reference": "Could you please return my charger on Friday?",
+          "response": "Could you please return my charger on Friday?",
+          "reference_match": true,
+          "preserve": [
+            "Friday"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.808
+        },
+        {
+          "id": "p17",
+          "category": "polite",
+          "prompt": "Turn this into a polite request: Speak more slowly.",
+          "reference": "Could you please speak more slowly?",
+          "response": "Could you please speak more slowly?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.765
+        },
+        {
+          "id": "p18",
+          "category": "polite",
+          "prompt": "Make this message more polite: Let me know if the room is available.",
+          "reference": "Could you please let me know if the room is available?",
+          "response": "Could I please know if the room is available?",
+          "reference_match": false,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.996
+        },
+        {
+          "id": "p19",
+          "category": "polite",
+          "prompt": "Rewrite the text politely. Do not offer to send anything: Send a copy of the invoice.",
+          "reference": "Could you please send a copy of the invoice?",
+          "response": "Could you please send a copy of the invoice?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 1.11
+        },
+        {
+          "id": "p20",
+          "category": "polite",
+          "prompt": "Make this request polite and keep the meaning: Close the gate after you leave.",
+          "reference": "Could you please close the gate after you leave?",
+          "response": "Could you please close the gate after you leave?",
+          "reference_match": true,
+          "preserve": [],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.984
+        },
+        {
+          "id": "c01",
+          "category": "preservation",
+          "prompt": "Fix the grammar. Keep the name and number exactly: Aisha have 17 notebooks.",
+          "reference": "Aisha has 17 notebooks.",
+          "response": "Aisha has 17 notebooks.",
+          "reference_match": true,
+          "preserve": [
+            "Aisha",
+            "17"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.734
+        },
+        {
+          "id": "c02",
+          "category": "preservation",
+          "prompt": "Correct the grammar without changing the place: The parcel were delivered to Kaduna.",
+          "reference": "The parcel was delivered to Kaduna.",
+          "response": "The parcel was delivered to Kaduna.",
+          "reference_match": true,
+          "preserve": [
+            "Kaduna"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.786
+        },
+        {
+          "id": "c03",
+          "category": "preservation",
+          "prompt": "Rewrite politely. Preserve the order code and deadline: Send order BQ-731 before Thursday.",
+          "reference": "Could you please send order BQ-731 before Thursday?",
+          "response": "Could you please send order BQ-731 before Thursday?",
+          "reference_match": true,
+          "preserve": [
+            "BQ-731",
+            "Thursday"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 1.101
+        },
+        {
+          "id": "c04",
+          "category": "preservation",
+          "prompt": "Fix grammar only. Keep the amount unchanged: The fee are 4,750 naira.",
+          "reference": "The fee is 4,750 naira.",
+          "response": "The fee is 4,750 naira.",
+          "reference_match": true,
+          "preserve": [
+            "4,750",
+            "naira"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 1.108
+        },
+        {
+          "id": "c05",
+          "category": "preservation",
+          "prompt": "Make this request polite. Preserve the time and day: Meet me at 2:45 pm on Tuesday.",
+          "reference": "Could you please meet me at 2:45 pm on Tuesday?",
+          "response": "Could you please meet me at 2:45 pm on Tuesday?",
+          "reference_match": true,
+          "preserve": [
+            "2:45",
+            "pm",
+            "Tuesday"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 1.155
+        },
+        {
+          "id": "c06",
+          "category": "preservation",
+          "prompt": "Correct the grammar. Keep the negative meaning: I do not agrees with the decision.",
+          "reference": "I do not agree with the decision.",
+          "response": "I do not agree with the decision.",
+          "reference_match": true,
+          "preserve": [
+            "not"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 0.638
+        },
+        {
+          "id": "c07",
+          "category": "preservation",
+          "prompt": "Make this request polite without changing the name or which folder is wanted: Give Fatima the blue folder, not the green one.",
+          "reference": "Could you please give Fatima the blue folder, not the green one?",
+          "response": "Could you please give Fatima the blue folder, not the green one?",
+          "reference_match": true,
+          "preserve": [
+            "Fatima",
+            "blue",
+            "not",
+            "green"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 1.639
+        },
+        {
+          "id": "c08",
+          "category": "preservation",
+          "prompt": "Correct grammar only, preserving all names and the day: Yusuf and Grace was in Jos on Monday.",
+          "reference": "Yusuf and Grace were in Jos on Monday.",
+          "response": "Yusuf and Grace were in Jos on Monday.",
+          "reference_match": true,
+          "preserve": [
+            "Yusuf",
+            "Grace",
+            "Jos",
+            "Monday"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 1.405
+        },
+        {
+          "id": "c09",
+          "category": "preservation",
+          "prompt": "Correct grammar only. Repeat the text unchanged if it is already correct: Please email the form to coordinator@example.org.",
+          "reference": "Please email the form to coordinator@example.org.",
+          "response": "Please email the form to coordinator@example.org.",
+          "reference_match": true,
+          "preserve": [
+            "coordinator@example.org"
+          ],
+          "missing_literals": [],
+          "rubric": "Preserve meaning, follow the instruction, and add no unsupported details.",
+          "seconds": 1.161
+        },
+        {
+          "id": "c10",
+          "category": "preservation",
+          "prompt": "Rewrite politely, preserving the instruction not to remove the label and the box number: Don't remove the label from box 28.",
+          "reference": "Please do not remove the label from box 28.",
+          "response": "Please do not remove the label from box 28.",
+          "reference_match": true,
+          "preserve": [
+            "28"
+          ],
+          "missing_literals": [],
+          "rubric": "Must still prohibit removing the label; check negation manually.",
+          "seconds": 1.122
+        }
+      ]
+    }
+  }
+}

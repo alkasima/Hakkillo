@@ -44,7 +44,7 @@ The default run uses 32 synthetic examples, 8 separate development examples, 48 
 Outputs:
 
 - `artifacts/hakkillo-135m-v0.1/`: local adapter weights and tokenizer; excluded from Git.
-- `reports/training_metrics.json`: run settings, hashes, and measured development losses.
+- `artifacts/<run>/training_metrics.json`: each run's settings, data hashes, and development losses. Use `--report <new-path>` to also save a report in `reports/`; an existing report is never overwritten.
 - `reports/generation_review.json`: base and Hakkillo answers to the same prompts, with latency.
 
 When the default local adapter exists, the app loads it automatically. For a new experiment, preserve the first run:
@@ -57,6 +57,8 @@ $env:HAKKILLO_ADAPTER = (Resolve-Path artifacts/experiment-002).Path
 ```
 
 Each training command starts from the same pinned base model. It does not resume an earlier adapter. More steps can cause overfitting; compare outputs before choosing a release.
+
+The original `reports/training_metrics.json` remains the v0.1 record. The [v0.2 writing experiment](EXPERIMENTS.md) adds 232 training requests, 50 development prompts, and a separate reserved holdout. Its candidate is available locally for review; the public demo still uses v0.1 weights.
 
 ## Publish to Hugging Face
 

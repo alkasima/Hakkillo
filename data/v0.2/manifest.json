@@ -1,0 +1,18 @@
+{
+  "authored_date": "2026-11-09",
+  "license": "Apache-2.0",
+  "provenance": "Synthetic examples authored and reviewed by the AI assistant for this project; no independent human review or user conversations.",
+  "unique_new_training_sources": 100,
+  "prompt_variants_per_source": 2,
+  "legacy_replay_examples": 32,
+  "training_examples": 232,
+  "development_examples": 50,
+  "reserved_holdout_examples": 20,
+  "holdout_policy": "Do not run or select candidates against the reserved holdout during this development experiment. It is source-disjoint synthetic data, not a secret or independently authored benchmark.",
+  "sha256": {
+    "training_pairs.jsonl": "e51ecbd74275b3c9334489fb333bc40cf2b42c216c19202ac67300549fe8ab46",
+    "train.jsonl": "6dd60ceb8f6951db7ed294e34ebec78462b09d0a7d8bb462d15adcbdadb21465",
+    "writing_dev.jsonl": "7fff28128b528d3a0a973035b1268b2f41d522b14ce271a161c474133a5c9a92",
+    "writing_holdout.jsonl": "dc7095fbc208681a290835f40ea62aab2d3b610633da4baec8ad5e63efe98344"
+  }
+}

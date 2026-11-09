@@ -35,7 +35,7 @@ def adapter_source():
     return None
 
 
-def generate_reply(model, tokenizer, message, history=None, max_new_tokens=96, temperature=0.0):
+def generate_reply(model, tokenizer, message, history=None, max_new_tokens=96, temperature=0.0, repetition_penalty=1.08):
     if not isinstance(message, str) or not message.strip():
         raise ValueError("Enter a message first")
     if len(message) > 4000:
@@ -55,7 +55,7 @@ def generate_reply(model, tokenizer, message, history=None, max_new_tokens=96, t
         del messages[1]
     options = {"max_new_tokens": max_new_tokens, "do_sample": temperature > 0,
                "pad_token_id": tokenizer.pad_token_id, "eos_token_id": tokenizer.eos_token_id,
-               "repetition_penalty": 1.08}
+               "repetition_penalty": float(repetition_penalty)}
     if temperature > 0:
         options.update(temperature=float(temperature), top_p=0.9)
     with torch.inference_mode():

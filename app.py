@@ -22,7 +22,7 @@ def respond(message, history, max_new_tokens, temperature):
         raise gr.Error(str(error)) from error
 
 
-mode = "Experimental Hakkillo v0.1 adaptation" if adapter_source() else "Base-model preview: Hakkillo adapter is not loaded"
+mode = os.environ.get("HAKKILLO_MODEL_LABEL", "Experimental Hakkillo adaptation") if adapter_source() else "Base-model preview: Hakkillo adapter is not loaded"
 demo = gr.ChatInterface(
     fn=respond,
     title="Hakkillo",

@@ -1,0 +1,202 @@
+{
+  "g01": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g02": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g03": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g04": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g05": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g06": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g07": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g08": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g09": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g10": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g11": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g12": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g13": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g14": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g15": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g16": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g17": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g18": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "g19": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "g20": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p01": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p02": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p03": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p04": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p05": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p06": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p07": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p08": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p09": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p10": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p11": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p12": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p13": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p14": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p15": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p16": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p17": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "p18": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p19": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "p20": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "c01": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "c02": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "c03": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "c04": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "c05": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "c06": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "c07": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "c08": {
+    "A": "candidate1",
+    "B": "v0.1"
+  },
+  "c09": {
+    "A": "v0.1",
+    "B": "candidate1"
+  },
+  "c10": {
+    "A": "candidate1",
+    "B": "v0.1"
+  }
+}

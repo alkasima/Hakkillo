@@ -41,11 +41,15 @@ def main():
     parser.add_argument("--max-length", type=int, default=256)
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--release", default="development", help="Label for this experimental run")
+    parser.add_argument("--report", type=Path, help="Optional new report path; the run always stores its own metrics")
     args = parser.parse_args()
     if args.steps < 1 or args.learning_rate <= 0:
         parser.error("steps and learning rate must be positive")
     if args.output.exists() and any(args.output.iterdir()):
         parser.error("Output directory is not empty; choose a new --output to preserve the previous run")
+    if args.report and args.report.exists():
+        parser.error("Report already exists; choose a new --report to preserve previous results")
     random.seed(args.seed)
     torch.manual_seed(args.seed)
     train_rows, eval_rows = read_examples(args.train), read_examples(args.eval)
@@ -90,7 +94,7 @@ def main():
     model.save_pretrained(args.output, safe_serialization=True)
     tokenizer.save_pretrained(args.output)
     metrics = {
-        "release": "0.1.0", "created_at_utc": datetime.now(timezone.utc).isoformat(),
+        "release": args.release, "created_at_utc": datetime.now(timezone.utc).isoformat(),
         "base_model": BASE_MODEL, "base_revision": BASE_REVISION,
         "base_parameters": base_parameters, "trainable_parameters": trainable,
         "training_examples": len(train), "evaluation_examples": len(evaluation),
@@ -104,11 +108,12 @@ def main():
         "held_out_loss_before": before, "held_out_loss_after": after,
         "held_out_perplexity_before": math.exp(before), "held_out_perplexity_after": math.exp(after),
         "elapsed_seconds": elapsed, "training_losses": losses,
-        "interpretation": "Tiny synthetic development set only; this is not evidence of general capability gains.",
+        "interpretation": "Development loss on the supplied evaluation set; this alone is not evidence of general capability gains.",
     }
     (args.output / "training_metrics.json").write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
-    (ROOT / "reports").mkdir(exist_ok=True)
-    (ROOT / "reports/training_metrics.json").write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
+    if args.report:
+        args.report.parent.mkdir(parents=True, exist_ok=True)
+        args.report.write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
     print(f"Held-out loss after training: {after:.4f}; saved {args.output}", flush=True)
 
 

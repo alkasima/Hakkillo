@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-09",
+  "python_tests_passed": 9,
+  "javascript_tests_passed": 9,
+  "javascript_test_scope": "DOM interaction tests with a mocked model worker, plus feedback serialization tests",
+  "data_hashes_and_split_checks_passed": true,
+  "reserved_holdout_generated_or_scored": false,
+  "candidate_adapter_sha256": "6772cf97cde238a51aecd7eb8419aca100d4b43a6ce017800b3d20da08f49a84",
+  "candidate_weights_published": false,
+  "legacy_reports_unchanged": true,
+  "demo_source_commit": "cadc91ac933b3e6f514c6267a147baf3214c0b8f",
+  "demo_ci_run": "https://github.com/alkasima/Hakkillo/actions/runs/42569141710",
+  "demo_ci_result": "success",
+  "space_runtime": "RUNNING",
+  "space_revision": "31a8c5ff98d4a8ea9ab0e2bcd4095473777ea814",
+  "deployed_assets_match_local": true,
+  "feedback_module_http_status": 200,
+  "feedback_module_content_type": "application/javascript; charset=utf-8",
+  "fresh_visual_browser_check": "Not completed: browser tool failed to initialize after a reset/retry.",
+  "candidate_onnx_or_browser_evaluation": "Not performed; required before promoting candidate weights."
+}
