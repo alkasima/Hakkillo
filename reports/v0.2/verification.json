@@ -17,5 +17,9 @@
   "feedback_module_http_status": 200,
   "feedback_module_content_type": "application/javascript; charset=utf-8",
   "fresh_visual_browser_check": "Not completed: browser tool failed to initialize after a reset/retry.",
-  "candidate_onnx_or_browser_evaluation": "Not performed; required before promoting candidate weights."
+  "candidate_onnx_or_browser_evaluation": "Not performed; required before promoting candidate weights.",
+  "candidate_source_commit": "9e9cd19d4a5f85ba667591e0edd1627a528d4b69",
+  "candidate_ci_run": "https://github.com/alkasima/Hakkillo/actions/runs/42569807516",
+  "candidate_ci_result": "success",
+  "existing_report_overwrite_guard_passed": true
 }
