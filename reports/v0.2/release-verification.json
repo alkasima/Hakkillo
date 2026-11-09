@@ -1,0 +1,15 @@
+{
+  "source_commit": "93b4b9a09d00fa78e5713b2babaf822db5ca4c7a",
+  "github_release": "https://github.com/alkasima/Hakkillo/releases/tag/v0.2.0-writing-candidate1",
+  "tag": "v0.2.0-writing-candidate1",
+  "prerelease": true,
+  "ci_run": "https://github.com/alkasima/Hakkillo/actions/runs/42574660487",
+  "ci_conclusion": "success",
+  "python_tests_passed": 9,
+  "javascript_tests_passed": 9,
+  "model_publication_record": "reports/v0.2/publication.json",
+  "published_adapter_smoke_record": "reports/v0.2/published-smoke.json",
+  "space_deployment_record": "reports/v0.2/space-publication.json",
+  "candidate_promoted_to_browser": false,
+  "fresh_visual_browser_check": "Not completed: browser automation initialization was unavailable."
+}

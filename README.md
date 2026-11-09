@@ -10,7 +10,7 @@ This is an early learning and development release. It is not pretrained from scr
 
 ## Latest: experimental writing candidate, 9 November 2026
 
-[Download the writing candidate](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1) · [Results and known failures](EXPERIMENTS.md) · [Model card](model_cards/writing-candidate1.md)
+[Download the writing candidate](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1) · [GitHub prerelease](https://github.com/alkasima/Hakkillo/releases/tag/v0.2.0-writing-candidate1) · [Results and known failures](EXPERIMENTS.md) · [Model card](model_cards/writing-candidate1.md)
 
 The new CPU-trained adapter targets grammar correction and polite rewriting. On 50 synthetic development prompts, reference matches rose from **13/50 for v0.1 to 43/50 for this candidate**. These are development reference matches, not general accuracy. It still makes article, subject, and ownership mistakes; independent review and reserved-holdout evaluation remain pending.
 

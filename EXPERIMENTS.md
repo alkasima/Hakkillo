@@ -74,4 +74,6 @@ Raw outputs: `reports/v0.2/writing-baseline.json`, `writing-no-repetition-penalt
 
 `reports/v0.2/publication.json` records the exact Hugging Face model revision and the checksum verification of downloaded weights. The candidate model card and raw measured outputs are also included in the Hugging Face model repository.
 
+The [GitHub prerelease](https://github.com/alkasima/Hakkillo/releases/tag/v0.2.0-writing-candidate1) records the published source. All nine Python and nine JavaScript tests passed locally and in GitHub Actions for that source. A smoke check loading the pinned published adapter reproduced the expected file-request rewrite. See `reports/v0.2/release-verification.json`, `published-smoke.json`, and `space-publication.json` for release and deployment evidence.
+
 The new UI passed nine automated JavaScript tests, including DOM interactions with a mocked model worker. The Space reported `RUNNING`; deployed files matched local files and the feedback module was served as JavaScript. The browser automation tool failed to initialize, so this update has **not** had a fresh visual/interactive browser check. Its deployed model and generation settings were preserved. No feedback is automatically submitted or used for training.
