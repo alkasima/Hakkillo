@@ -1,6 +1,6 @@
 # Writing candidate — 2026-11-09
 
-Today’s experiment targets grammar correction and polite rewriting. It produced a local adapter at `artifacts/hakkillo-135m-v0.2-writing-candidate1`. The public Space still uses the pinned v0.1 ONNX model. Its starter prompts and feedback-copy controls have been updated in response to the X feedback relayed by the project owner.
+Today’s experiment targets grammar correction and polite rewriting. Its adapter is now published as [Hakkillo-135M-v0.2-writing-candidate1](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1), an **experimental prerelease for inspection and local testing**. It is not a stable v0.2 release. The public Space still uses the pinned v0.1 ONNX model and links to this candidate. Its starter prompts and feedback-copy controls have been updated in response to the X feedback relayed by the project owner.
 
 ## Result
 
@@ -37,12 +37,13 @@ The original eight-prompt smoke check also ran. The candidate rewrote the file r
 Run from the project folder in PowerShell:
 
 ```powershell
-$env:HAKKILLO_ADAPTER = (Resolve-Path artifacts/hakkillo-135m-v0.2-writing-candidate1).Path
+$env:HAKKILLO_ADAPTER = 'alkasima/Hakkillo-135M-v0.2-writing-candidate1'
+$env:HAKKILLO_ADAPTER_REVISION = '829fc0b86824c276b8fe9b8a566c7bcd63ab41fb'
 $env:HAKKILLO_MODEL_LABEL = 'Hakkillo writing candidate 1 — experimental'
 .\.venv\Scripts\python.exe app.py
 ```
 
-Open `http://127.0.0.1:7860` and try short writing requests. These environment variables apply to that terminal session. In a fresh terminal, the app defaults to the original local v0.1 adapter.
+First install the dependencies using the README's setup command. Open `http://127.0.0.1:7860` and try short writing requests. These environment variables apply to that terminal session. In a fresh terminal, the app defaults to the original local v0.1 adapter if present, or the base-model preview otherwise. The original local candidate remains at `artifacts/hakkillo-135m-v0.2-writing-candidate1`.
 
 ## Reproduce without overwriting earlier runs
 
@@ -57,16 +58,20 @@ npm test
 
 Choose fresh output paths for each new run. The evaluator refuses to overwrite an existing result, and the trainer keeps metrics inside the run directory. Use `--report` only with a new path. Source sentences and request variants are checked for overlap between train/development/holdout splits.
 
-## Before publishing new weights
+## Before promoting a stable release or the browser chat
+
+The experimental adapter is public so others can inspect it and reproduce the results. These checks remain outstanding for promotion:
 
 1. Review the actual outputs and the anonymous comparison sheet in `reports/v0.2/`.
 2. Add independently written pronoun/ownership and article examples without copying development prompts into training.
 3. Once a candidate is selected, evaluate it on the reserved holdout and independently authored user tasks; use human review for meaning and tone.
 4. Export that candidate to ONNX and compare its browser results with Python results. Quantization hurt v0.1 on an arithmetic example, so do not assume parity.
-5. Publish a versioned release with evidence if it passes these checks.
+5. Publish a stable version with evidence and update the browser model pin only if it passes these checks.
 
 ## Files and verification
 
-Raw outputs: `reports/v0.2/writing-baseline.json`, `writing-no-repetition-penalty.json`, `writing-candidate1.json`, and `general-candidate1.json`. Training settings and hashes: `candidate1-training.json`. Data provenance: `data/v0.2/README.md` and `manifest.json`.
+Raw outputs: `reports/v0.2/writing-baseline.json`, `writing-no-repetition-penalty.json`, `writing-candidate1.json`, and `general-candidate1.json`. Training settings and hashes: `candidate1-training.json`. Data provenance: `data/v0.2/README.md` and `manifest.json`. The training metrics' historical `held_out_loss_*` keys refer to the development set, not the reserved holdout.
+
+`reports/v0.2/publication.json` records the exact Hugging Face model revision and the checksum verification of downloaded weights. The candidate model card and raw measured outputs are also included in the Hugging Face model repository.
 
 The new UI passed nine automated JavaScript tests, including DOM interactions with a mocked model worker. The Space reported `RUNNING`; deployed files matched local files and the feedback module was served as JavaScript. The browser automation tool failed to initialize, so this update has **not** had a fresh visual/interactive browser check. Its deployed model and generation settings were preserved. No feedback is automatically submitted or used for training.

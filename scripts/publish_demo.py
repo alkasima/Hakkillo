@@ -9,6 +9,7 @@ root = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument("--space", default="alkasima/Hakkillo")
 parser.add_argument("--report", type=Path, required=True)
+parser.add_argument("--message", default="Add reproducible starter prompts and copyable model feedback")
 args = parser.parse_args()
 if args.report.exists():
     parser.error("Use a new report filename to preserve previous deployment records")
@@ -23,8 +24,8 @@ if remote != local:
     parser.error("UI-only publishing must preserve the deployed model configuration")
 commit = api.upload_folder(
     repo_id=args.space, repo_type="space", folder_path=root / "web",
-    allow_patterns=["*.html", "*.css", "*.js", "*.mjs", "model.json"],
-    parent_commit=info.sha, commit_message="Add reproducible starter prompts and copyable model feedback",
+    allow_patterns=["*.html", "*.css", "*.js", "*.mjs", "model.json", "README.md"],
+    parent_commit=info.sha, commit_message=args.message,
 )
 result = {"space": args.space, "previous_space_revision": info.sha, "space_revision": commit.oid,
           "model_configuration_unchanged": True, "model": local,

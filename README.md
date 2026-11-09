@@ -8,6 +8,14 @@ Hakkillo starts with [SmolLM2-135M-Instruct](https://huggingface.co/HuggingFaceT
 
 This is an early learning and development release. It is not pretrained from scratch and is not competitive with large assistants. Its starter dataset is deliberately tiny; lower loss on that dataset does not establish general improvement.
 
+## Latest: experimental writing candidate, 9 November 2026
+
+[Download the writing candidate](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1) · [Results and known failures](EXPERIMENTS.md) · [Model card](model_cards/writing-candidate1.md)
+
+The new CPU-trained adapter targets grammar correction and polite rewriting. On 50 synthetic development prompts, reference matches rose from **13/50 for v0.1 to 43/50 for this candidate**. These are development reference matches, not general accuracy. It still makes article, subject, and ownership mistakes; independent review and reserved-holdout evaluation remain pending.
+
+The candidate weights, training data, and raw results are public for inspection and local testing. **The browser chat still runs v0.1** while candidate ONNX/browser validation is pending. The Space now links to the candidate and includes starter prompts and a way to copy reproducible feedback.
+
 ## Quick start on Windows
 
 Use Python 3.10 or 3.11 and Git. From this project directory:
@@ -23,7 +31,7 @@ The hosted Space uses a separate browser runtime: a static website downloads abo
 
 The demo has three starter prompts, including a labelled rewriting challenge that v0.1 struggles with. Each starter opens a fresh conversation. After a reply, **Copy last exchange** prepares the prompt, response, earlier turns used, and exact model revision for a reproducible report. Review the copied text before posting it to GitHub; the app does not submit feedback automatically.
 
-Until an adapter is available, the app explicitly shows **base-model preview**. To download the published Hakkillo adapter, once it is available:
+Without a configured or local adapter, the app explicitly shows **base-model preview**. To use the published v0.1 adapter:
 
 ```powershell
 $env:HAKKILLO_ADAPTER = 'alkasima/Hakkillo-135M-v0.1'
@@ -58,7 +66,7 @@ $env:HAKKILLO_ADAPTER = (Resolve-Path artifacts/experiment-002).Path
 
 Each training command starts from the same pinned base model. It does not resume an earlier adapter. More steps can cause overfitting; compare outputs before choosing a release.
 
-The original `reports/training_metrics.json` remains the v0.1 record. The [v0.2 writing experiment](EXPERIMENTS.md) adds 232 training requests, 50 development prompts, and a separate reserved holdout. Its candidate is available locally for review; the public demo still uses v0.1 weights.
+The original `reports/training_metrics.json` remains the v0.1 record. The [v0.2 writing experiment](EXPERIMENTS.md) adds 232 training requests, 50 development prompts, and a separate reserved holdout. Its experimental adapter is published on Hugging Face; see the experiment report for pinned local-testing commands. The public demo still uses v0.1 weights.
 
 ## Publish to Hugging Face
 
@@ -80,6 +88,8 @@ This publishes the adapter to `alkasima/Hakkillo-135M-v0.1` and generates the mo
 The browser publisher creates `alkasima/Hakkillo-135M-v0.1-ONNX` and the static Space `alkasima/Hakkillo`, pinning its model download to an exact commit. During this setup, Hugging Face required a PRO subscription for Gradio/Docker CPU hosting on this account; static Spaces were available without that subscription. The project requests no paid hardware. The Python Gradio app remains available locally. An optional `--gradio --space-name Hakkillo-server` flag on the adapter publisher is available for accounts eligible for server hosting.
 
 Model weights are never committed to GitHub. `reports/publishing.json` records successful Hugging Face uploads; hosted runtime verification is recorded separately.
+
+The writing prerelease uses `scripts/publish_writing_candidate.py`, which verifies the evaluated adapter checksum, uploads its own model card and evidence, and records the exact model commit in `reports/v0.2/publication.json`. It does not replace v0.1 or publish browser weights.
 
 ## Project map
 

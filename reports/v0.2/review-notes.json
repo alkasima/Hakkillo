@@ -2,11 +2,29 @@
   "reviewer": "AI assistant; not independent or blind human review",
   "writing_candidate": "candidate1",
   "clear_writing_failures": [
-    {"id":"g10","finding":"Incorrect article before 'honest'; regressed from the v0.1 reference match."},
-    {"id":"g16","finding":"Changed the subject from 'she' to 'Hakkillo'."},
-    {"id":"p07","finding":"Changed ownership from 'your umbrella' to 'my umbrella'."}
+    {
+      "id": "g10",
+      "finding": "Incorrect article before 'honest'; regressed from the v0.1 reference match."
+    },
+    {
+      "id": "g16",
+      "finding": "Changed the subject from 'she' to 'Hakkillo'."
+    },
+    {
+      "id": "p07",
+      "finding": "Changed ownership from 'your umbrella' to 'my umbrella'."
+    }
   ],
-  "non_matching_wording_for_human_review": ["g06", "p06", "p13", "p18"],
-  "general_failures_still_present": ["Invented live weather", "Poor laptop troubleshooting", "Output-format instruction failures"],
-  "release_decision": "Keep as a local development candidate. Reserved holdout, independent human review, and candidate ONNX/browser evaluation remain outstanding."
+  "non_matching_wording_for_human_review": [
+    "g06",
+    "p06",
+    "p13",
+    "p18"
+  ],
+  "general_failures_still_present": [
+    "Invented live weather",
+    "Poor laptop troubleshooting",
+    "Output-format instruction failures"
+  ],
+  "release_decision": "Published as an experimental development candidate for inspection and local testing, not promoted to the browser or a stable release. Reserved holdout, independent human review, and candidate ONNX/browser evaluation remain outstanding."
 }

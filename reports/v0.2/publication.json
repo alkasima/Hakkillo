@@ -1,0 +1,17 @@
+{
+  "published_at_utc": "2026-11-09T06:40:01.640794+00:00",
+  "release_status": "experimental prerelease; not promoted to browser chat",
+  "model_id": "alkasima/Hakkillo-135M-v0.2-writing-candidate1",
+  "model_url": "https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1",
+  "revision": "829fc0b86824c276b8fe9b8a566c7bcd63ab41fb",
+  "adapter_sha256": "6772cf97cde238a51aecd7eb8419aca100d4b43a6ce017800b3d20da08f49a84",
+  "downloaded_weight_checksum_verified": true,
+  "reserved_holdout_generated_or_scored": false,
+  "independent_human_review_completed": false,
+  "candidate_onnx_or_browser_evaluation_completed": false,
+  "browser_model": {
+    "model_id": "alkasima/Hakkillo-135M-v0.1-ONNX",
+    "revision": "ee52b42d81b3f6ed9cf7dce2a6d93957d03b670c",
+    "download_mb": 141
+  }
+}

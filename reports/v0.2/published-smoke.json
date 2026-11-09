@@ -1,0 +1,9 @@
+{
+  "model_id": "alkasima/Hakkillo-135M-v0.2-writing-candidate1",
+  "revision": "829fc0b86824c276b8fe9b8a566c7bcd63ab41fb",
+  "prompt": "Rewrite politely: Send me the file now.",
+  "reply": "Could you please send me the file now?",
+  "expected": "Could you please send me the file now?",
+  "passed": true,
+  "scope": "One packaging smoke check from the published adapter using the pinned base, float32 CPU, greedy decoding, max_new_tokens=64, repetition_penalty=1.08. Not a new benchmark."
+}

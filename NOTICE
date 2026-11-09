@@ -6,6 +6,9 @@ and distributed under the Apache License, Version 2.0.
 Upstream: https://huggingface.co/HuggingFaceTB/SmolLM2-135M-Instruct
 Pinned revision: 12fd25f77366fa6b3b4b768ec3050bf629380bac
 
-Hakkillo v0.1 adds project code, synthetic starter examples, and a LoRA
+Hakkillo adds project code, synthetic training examples, and LoRA
 adaptation of the base model's attention query and value projections.
 It is not a model pretrained from scratch and is not endorsed by Hugging Face.
+
+The v0.2 writing candidate adds a separate experimental adapter trained on
+synthetic grammar and polite-rewriting requests, plus evaluation reports.
