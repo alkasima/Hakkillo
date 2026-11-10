@@ -8,7 +8,11 @@ Hakkillo starts with [SmolLM2-135M-Instruct](https://huggingface.co/HuggingFaceT
 
 This is an early learning and development release. It is not pretrained from scratch and is not competitive with large assistants. Its starter dataset is deliberately tiny; lower loss on that dataset does not establish general improvement.
 
-## Latest: experimental writing candidate, 9 November 2026
+## Community follow-up, 10 November 2026
+
+We ran the umbrella examples suggested on X against both published adapters. The writing candidate preserved ownership and negation on the three suggested cases; the original ownership error still reproduces. [Read the exact outputs and separate checks](reports/community/2026-11-10.md). This adds evaluation evidence, not new model weights. The browser demo still runs v0.1.
+
+## Experimental writing candidate, 9 November 2026
 
 [Download the writing candidate](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1) · [GitHub prerelease](https://github.com/alkasima/Hakkillo/releases/tag/v0.2.0-writing-candidate1) · [Results and known failures](EXPERIMENTS.md) · [Model card](model_cards/writing-candidate1.md)
 

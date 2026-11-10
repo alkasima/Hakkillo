@@ -1,0 +1,19 @@
+{
+  "purpose": "Regression examples for ownership and negation, inspired by public feedback supplied by the project owner. Evaluation only; not a new independent benchmark or training data.",
+  "feedback_sources": [
+    {"author": "Akshat | MagnetX (@aksenHQ)", "url": "https://x.com/aksenHQ/status/2119773160367431914", "contribution": "Asked what rule would preserve the object's owner."},
+    {"author": "Aliii (@drunk_vibecoder)", "url": "https://x.com/drunk_vibecoder/status/2119770161976672685", "contribution": "Suggested the three Return/Don't lend examples and separate ownership, negation, and politeness checks."}
+  ],
+  "review_dimensions": [
+    "ownership: preserve the original owner and the speaker/addressee perspective",
+    "negation: preserve whether the requested action is positive or prohibited",
+    "politeness: make a polite request rather than commenting on or refusing the task",
+    "action: preserve the original action and object without inventing context"
+  ],
+  "cases": [
+    {"id": "known-ownership-failure", "sentence": "Lend me your umbrella.", "owner": "addressee", "action": "lend the umbrella to the speaker", "negative": false, "provenance": "Previously observed development failure; already used to inspect candidate1."},
+    {"id": "return-my", "sentence": "Return my umbrella.", "owner": "speaker", "action": "return the umbrella", "negative": false, "provenance": "Aliii's suggested regression example; not claimed to be novel relative to training."},
+    {"id": "return-your", "sentence": "Return your umbrella.", "owner": "addressee", "action": "return the umbrella without inventing a recipient", "negative": false, "provenance": "Aliii's suggested regression example; not claimed to be novel relative to training."},
+    {"id": "do-not-lend", "sentence": "Don't lend me your umbrella.", "owner": "addressee", "action": "do not lend the umbrella to the speaker", "negative": true, "provenance": "Aliii's suggested regression example; not claimed to be novel relative to training."}
+  ]
+}

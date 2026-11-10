@@ -1,0 +1,135 @@
+{
+  "created_at_utc": "2026-11-10T09:14:20.462791+00:00",
+  "dataset": {
+    "purpose": "Regression examples for ownership and negation, inspired by public feedback supplied by the project owner. Evaluation only; not a new independent benchmark or training data.",
+    "feedback_sources": [
+      {
+        "author": "Akshat | MagnetX (@aksenHQ)",
+        "url": "https://x.com/aksenHQ/status/2119773160367431914",
+        "contribution": "Asked what rule would preserve the object's owner."
+      },
+      {
+        "author": "Aliii (@drunk_vibecoder)",
+        "url": "https://x.com/drunk_vibecoder/status/2119770161976672685",
+        "contribution": "Suggested the three Return/Don't lend examples and separate ownership, negation, and politeness checks."
+      }
+    ],
+    "review_dimensions": [
+      "ownership: preserve the original owner and the speaker/addressee perspective",
+      "negation: preserve whether the requested action is positive or prohibited",
+      "politeness: make a polite request rather than commenting on or refusing the task",
+      "action: preserve the original action and object without inventing context"
+    ],
+    "cases": [
+      {
+        "id": "known-ownership-failure",
+        "sentence": "Lend me your umbrella.",
+        "owner": "addressee",
+        "action": "lend the umbrella to the speaker",
+        "negative": false,
+        "provenance": "Previously observed development failure; already used to inspect candidate1."
+      },
+      {
+        "id": "return-my",
+        "sentence": "Return my umbrella.",
+        "owner": "speaker",
+        "action": "return the umbrella",
+        "negative": false,
+        "provenance": "Aliii's suggested regression example; not claimed to be novel relative to training."
+      },
+      {
+        "id": "return-your",
+        "sentence": "Return your umbrella.",
+        "owner": "addressee",
+        "action": "return the umbrella without inventing a recipient",
+        "negative": false,
+        "provenance": "Aliii's suggested regression example; not claimed to be novel relative to training."
+      },
+      {
+        "id": "do-not-lend",
+        "sentence": "Don't lend me your umbrella.",
+        "owner": "addressee",
+        "action": "do not lend the umbrella to the speaker",
+        "negative": true,
+        "provenance": "Aliii's suggested regression example; not claimed to be novel relative to training."
+      }
+    ]
+  },
+  "data_sha256": "1e2bb981e95668849bdee163d3540fc691c2500ab733ead70002cb5a68548ae0",
+  "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "base_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "system_prompt": "You are Hakkillo, a small English AI assistant. Give clear, brief and helpful answers. If you do not know, say so. You cannot browse the web or take actions.",
+  "generation": {
+    "runtime": "Python float32 CPU; not quantized browser inference",
+    "max_new_tokens": 64,
+    "do_sample": false,
+    "repetition_penalty": 1.08,
+    "history": []
+  },
+  "reserved_holdout_used": false,
+  "quality_scoring": "Separate qualitative review required. No semantic accuracy score is generated.",
+  "models": {
+    "v0.1": {
+      "model_id": "alkasima/Hakkillo-135M-v0.1",
+      "revision": "72104c6721c23404d71b9285de35727269b4270f",
+      "adapter_sha256": "0e4ade8998f6be91706252698a436d34bb1bc8194b5b3ba2206b895b215a5bbf",
+      "results": [
+        {
+          "case_id": "known-ownership-failure",
+          "prompt": "Rewrite politely: Lend me your umbrella.",
+          "response": "I'm sorry for any misunderstanding, but as an AI assistant, I don't have the ability to access personal data unless it's shared with me in a professional setting. I recommend using a reliable weather app or a local guide to find a suitable umbrella.",
+          "seconds": 2.303
+        },
+        {
+          "case_id": "return-my",
+          "prompt": "Rewrite politely: Return my umbrella.",
+          "response": "I'm sorry for any confusion, but as an AI assistant, I don't have the ability to access personal data unless it's shared with me in a professional setting. I recommend using a reliable weather app or online map services instead.",
+          "seconds": 3.147
+        },
+        {
+          "case_id": "return-your",
+          "prompt": "Rewrite politely: Return your umbrella.",
+          "response": "I'm sorry for any confusion, but as an AI assistant, I don't have the ability to make decisions about return of items like umbrellas. I recommend checking with a reliable travel app or a local tour operator for the most accurate information.",
+          "seconds": 3.418
+        },
+        {
+          "case_id": "do-not-lend",
+          "prompt": "Rewrite politely: Don't lend me your umbrella.",
+          "response": "I'm sorry for any misunderstanding, but as an AI assistant, I don't have the ability to make purchases or access personal information unless it's shared with me in a private conversation. I recommend using a public transportation system or walking instead of borrowing my umbrella.",
+          "seconds": 4.342
+        }
+      ]
+    },
+    "writing-candidate1": {
+      "model_id": "alkasima/Hakkillo-135M-v0.2-writing-candidate1",
+      "revision": "829fc0b86824c276b8fe9b8a566c7bcd63ab41fb",
+      "adapter_sha256": "6772cf97cde238a51aecd7eb8419aca100d4b43a6ce017800b3d20da08f49a84",
+      "results": [
+        {
+          "case_id": "known-ownership-failure",
+          "prompt": "Rewrite politely: Lend me your umbrella.",
+          "response": "Could you please lend me my umbrella?",
+          "seconds": 1.037
+        },
+        {
+          "case_id": "return-my",
+          "prompt": "Rewrite politely: Return my umbrella.",
+          "response": "Could you please return my umbrella?",
+          "seconds": 0.665
+        },
+        {
+          "case_id": "return-your",
+          "prompt": "Rewrite politely: Return your umbrella.",
+          "response": "Could you please return your umbrella?",
+          "seconds": 0.599
+        },
+        {
+          "case_id": "do-not-lend",
+          "prompt": "Rewrite politely: Don't lend me your umbrella.",
+          "response": "Please do not lend me your umbrella.",
+          "seconds": 0.616
+        }
+      ]
+    }
+  }
+}
