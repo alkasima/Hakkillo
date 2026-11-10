@@ -12,6 +12,8 @@ This is an early learning and development release. It is not pretrained from scr
 
 We ran the umbrella examples suggested on X against both published adapters. The writing candidate preserved ownership and negation on the three suggested cases; the original ownership error still reproduces. [Read the exact outputs and separate checks](reports/community/2026-11-10.md). This adds evaluation evidence, not new model weights. The browser demo still runs v0.1.
 
+Next, we tested an explicit preservation rule on 12 cases. It fixed none of four ownership errors and introduced a fifth. [Read the prompt comparison and all outputs](reports/community/2026-11-10-prompt-rule.md). This prompt change was not deployed.
+
 ## Experimental writing candidate, 9 November 2026
 
 [Download the writing candidate](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1) · [GitHub prerelease](https://github.com/alkasima/Hakkillo/releases/tag/v0.2.0-writing-candidate1) · [Results and known failures](EXPERIMENTS.md) · [Model card](model_cards/writing-candidate1.md)

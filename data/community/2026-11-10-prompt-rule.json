@@ -1,0 +1,22 @@
+{
+  "purpose": "Compare one preselected preservation instruction with the current rewrite prompt. Four known regression cases plus eight AI-authored diagnostic cases; not an independent benchmark. No training or reserved-holdout use.",
+  "variants": {
+    "current": "Rewrite politely: {sentence}",
+    "preservation_rule": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: {sentence}"
+  },
+  "review_dimensions": ["ownership and participant roles", "negation and its scope", "names, quantities, and deadlines", "requested action", "politeness and rewrite-only output"],
+  "cases": [
+    {"id": "umbrella-your", "group": "known_regression", "sentence": "Lend me your umbrella.", "must_preserve": "Addressee owns umbrella; lend it to the speaker."},
+    {"id": "return-my", "group": "known_regression", "sentence": "Return my umbrella.", "must_preserve": "Speaker owns umbrella; return it."},
+    {"id": "return-your", "group": "known_regression", "sentence": "Return your umbrella.", "must_preserve": "Addressee owns umbrella; return it without inventing a recipient."},
+    {"id": "dont-lend", "group": "known_regression", "sentence": "Don't lend me your umbrella.", "must_preserve": "Addressee owns umbrella; do not lend it to the speaker."},
+    {"id": "notebook-your", "group": "new_diagnostic", "sentence": "Lend me your notebook.", "must_preserve": "Addressee owns notebook; lend it to the speaker."},
+    {"id": "notebook-my", "group": "new_diagnostic", "sentence": "Lend me my notebook.", "must_preserve": "Speaker owns notebook; lend it to the speaker, even if the request sounds unusual."},
+    {"id": "her-his", "group": "new_diagnostic", "sentence": "Send her his draft.", "must_preserve": "Male third party owns draft; send it to a female recipient."},
+    {"id": "him-her", "group": "new_diagnostic", "sentence": "Send him her draft.", "must_preserve": "Female third party owns draft; send it to a male recipient."},
+    {"id": "dont-return", "group": "new_diagnostic", "sentence": "Don't return my charger.", "must_preserve": "Speaker owns charger; prohibition on returning it."},
+    {"id": "dont-share", "group": "new_diagnostic", "sentence": "Do not share our password.", "must_preserve": "Password belongs to the speaker's group; prohibition on sharing it."},
+    {"id": "name-deadline", "group": "new_diagnostic", "sentence": "Return Lina's keys by Friday.", "must_preserve": "Lina owns the keys; return them no later than Friday."},
+    {"id": "quantity-negation", "group": "new_diagnostic", "sentence": "Send me 3 copies, not 5.", "must_preserve": "Send exactly 3 copies to the speaker; 5 is expressly excluded."}
+  ]
+}

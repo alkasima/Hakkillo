@@ -1,0 +1,258 @@
+{
+  "created_at_utc": "2026-11-10T15:41:29.535125+00:00",
+  "dataset": {
+    "purpose": "Compare one preselected preservation instruction with the current rewrite prompt. Four known regression cases plus eight AI-authored diagnostic cases; not an independent benchmark. No training or reserved-holdout use.",
+    "variants": {
+      "current": "Rewrite politely: {sentence}",
+      "preservation_rule": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: {sentence}"
+    },
+    "review_dimensions": [
+      "ownership and participant roles",
+      "negation and its scope",
+      "names, quantities, and deadlines",
+      "requested action",
+      "politeness and rewrite-only output"
+    ],
+    "cases": [
+      {
+        "id": "umbrella-your",
+        "group": "known_regression",
+        "sentence": "Lend me your umbrella.",
+        "must_preserve": "Addressee owns umbrella; lend it to the speaker."
+      },
+      {
+        "id": "return-my",
+        "group": "known_regression",
+        "sentence": "Return my umbrella.",
+        "must_preserve": "Speaker owns umbrella; return it."
+      },
+      {
+        "id": "return-your",
+        "group": "known_regression",
+        "sentence": "Return your umbrella.",
+        "must_preserve": "Addressee owns umbrella; return it without inventing a recipient."
+      },
+      {
+        "id": "dont-lend",
+        "group": "known_regression",
+        "sentence": "Don't lend me your umbrella.",
+        "must_preserve": "Addressee owns umbrella; do not lend it to the speaker."
+      },
+      {
+        "id": "notebook-your",
+        "group": "new_diagnostic",
+        "sentence": "Lend me your notebook.",
+        "must_preserve": "Addressee owns notebook; lend it to the speaker."
+      },
+      {
+        "id": "notebook-my",
+        "group": "new_diagnostic",
+        "sentence": "Lend me my notebook.",
+        "must_preserve": "Speaker owns notebook; lend it to the speaker, even if the request sounds unusual."
+      },
+      {
+        "id": "her-his",
+        "group": "new_diagnostic",
+        "sentence": "Send her his draft.",
+        "must_preserve": "Male third party owns draft; send it to a female recipient."
+      },
+      {
+        "id": "him-her",
+        "group": "new_diagnostic",
+        "sentence": "Send him her draft.",
+        "must_preserve": "Female third party owns draft; send it to a male recipient."
+      },
+      {
+        "id": "dont-return",
+        "group": "new_diagnostic",
+        "sentence": "Don't return my charger.",
+        "must_preserve": "Speaker owns charger; prohibition on returning it."
+      },
+      {
+        "id": "dont-share",
+        "group": "new_diagnostic",
+        "sentence": "Do not share our password.",
+        "must_preserve": "Password belongs to the speaker's group; prohibition on sharing it."
+      },
+      {
+        "id": "name-deadline",
+        "group": "new_diagnostic",
+        "sentence": "Return Lina's keys by Friday.",
+        "must_preserve": "Lina owns the keys; return them no later than Friday."
+      },
+      {
+        "id": "quantity-negation",
+        "group": "new_diagnostic",
+        "sentence": "Send me 3 copies, not 5.",
+        "must_preserve": "Send exactly 3 copies to the speaker; 5 is expressly excluded."
+      }
+    ]
+  },
+  "data_sha256": "b3d8476d30e7637d597207499ce1350e646fb6fe657c4bde88e526a70ba1f934",
+  "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "base_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "model_id": "alkasima/Hakkillo-135M-v0.2-writing-candidate1",
+  "revision": "829fc0b86824c276b8fe9b8a566c7bcd63ab41fb",
+  "adapter_sha256": "6772cf97cde238a51aecd7eb8419aca100d4b43a6ce017800b3d20da08f49a84",
+  "system_prompt": "You are Hakkillo, a small English AI assistant. Give clear, brief and helpful answers. If you do not know, say so. You cannot browse the web or take actions.",
+  "generation": {
+    "runtime": "Python float32 CPU",
+    "max_new_tokens": 64,
+    "repetition_penalty": 1.08,
+    "do_sample": false,
+    "history": []
+  },
+  "training_performed": false,
+  "reserved_holdout_used": false,
+  "quality_scoring": "Separate qualitative AI review; no automatic semantic score.",
+  "variants": {
+    "current": [
+      {
+        "case_id": "umbrella-your",
+        "prompt": "Rewrite politely: Lend me your umbrella.",
+        "response": "Could you please lend me my umbrella?",
+        "seconds": 0.796
+      },
+      {
+        "case_id": "return-my",
+        "prompt": "Rewrite politely: Return my umbrella.",
+        "response": "Could you please return my umbrella?",
+        "seconds": 0.737
+      },
+      {
+        "case_id": "return-your",
+        "prompt": "Rewrite politely: Return your umbrella.",
+        "response": "Could you please return your umbrella?",
+        "seconds": 1.799
+      },
+      {
+        "case_id": "dont-lend",
+        "prompt": "Rewrite politely: Don't lend me your umbrella.",
+        "response": "Please do not lend me your umbrella.",
+        "seconds": 1.684
+      },
+      {
+        "case_id": "notebook-your",
+        "prompt": "Rewrite politely: Lend me your notebook.",
+        "response": "Could you please lend me my notebook?",
+        "seconds": 1.926
+      },
+      {
+        "case_id": "notebook-my",
+        "prompt": "Rewrite politely: Lend me my notebook.",
+        "response": "Could you please lend me my notebook?",
+        "seconds": 1.294
+      },
+      {
+        "case_id": "her-his",
+        "prompt": "Rewrite politely: Send her his draft.",
+        "response": "Could you please send her her draft?",
+        "seconds": 1.876
+      },
+      {
+        "case_id": "him-her",
+        "prompt": "Rewrite politely: Send him her draft.",
+        "response": "Could you please send him his draft?",
+        "seconds": 1.626
+      },
+      {
+        "case_id": "dont-return",
+        "prompt": "Rewrite politely: Don't return my charger.",
+        "response": "Please do not return my charger.",
+        "seconds": 2.125
+      },
+      {
+        "case_id": "dont-share",
+        "prompt": "Rewrite politely: Do not share our password.",
+        "response": "Please do not share our password.",
+        "seconds": 2.255
+      },
+      {
+        "case_id": "name-deadline",
+        "prompt": "Rewrite politely: Return Lina's keys by Friday.",
+        "response": "Could you please return Lina's keys by Friday?",
+        "seconds": 3.022
+      },
+      {
+        "case_id": "quantity-negation",
+        "prompt": "Rewrite politely: Send me 3 copies, not 5.",
+        "response": "Could you please send me 3 copies, not 5?",
+        "seconds": 2.235
+      }
+    ],
+    "preservation_rule": [
+      {
+        "case_id": "umbrella-your",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Lend me your umbrella.",
+        "response": "Could you please lend me my umbrella?",
+        "seconds": 1.793
+      },
+      {
+        "case_id": "return-my",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Return my umbrella.",
+        "response": "Could you please return my umbrella?",
+        "seconds": 1.691
+      },
+      {
+        "case_id": "return-your",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Return your umbrella.",
+        "response": "Could you please return your umbrella?",
+        "seconds": 1.828
+      },
+      {
+        "case_id": "dont-lend",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Don't lend me your umbrella.",
+        "response": "Please do not lend me my umbrella.",
+        "seconds": 1.674
+      },
+      {
+        "case_id": "notebook-your",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Lend me your notebook.",
+        "response": "Could you please lend me my notebook?",
+        "seconds": 1.67
+      },
+      {
+        "case_id": "notebook-my",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Lend me my notebook.",
+        "response": "Could you please lend me my notebook?",
+        "seconds": 2.243
+      },
+      {
+        "case_id": "her-his",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Send her his draft.",
+        "response": "Could you please send her her draft?",
+        "seconds": 1.854
+      },
+      {
+        "case_id": "him-her",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Send him her draft.",
+        "response": "Could you please send him his draft?",
+        "seconds": 1.561
+      },
+      {
+        "case_id": "dont-return",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Don't return my charger.",
+        "response": "Please do not return my charger.",
+        "seconds": 1.495
+      },
+      {
+        "case_id": "dont-share",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Do not share our password.",
+        "response": "Please do not share our password.",
+        "seconds": 2.199
+      },
+      {
+        "case_id": "name-deadline",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Return Lina's keys by Friday.",
+        "response": "Could you please return Lina's keys by Friday?",
+        "seconds": 2.454
+      },
+      {
+        "case_id": "quantity-negation",
+        "prompt": "Rewrite politely. Keep the original names, pronouns, ownership, negation, numbers, and deadlines unchanged. Return only the rewritten sentence: Send me 3 copies, not 5.",
+        "response": "Could you please send me 3 copies, not 5?",
+        "seconds": 2.366
+      }
+    ]
+  }
+}

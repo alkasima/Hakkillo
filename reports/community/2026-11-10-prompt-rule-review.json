@@ -1,0 +1,239 @@
+{
+  "reviewer": "AI coding assistant; qualitative inspection of all outputs, not blind or independent human review.",
+  "scope": "One fixed prompt change, 12 selected examples, same pinned writing candidate and decoding. No general accuracy claim.",
+  "variants": {
+    "current": {
+      "cases_reviewed": 12,
+      "ownership_errors": 4,
+      "results": [
+        {
+          "case_id": "umbrella-your",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Changed your umbrella to my umbrella."
+        },
+        {
+          "case_id": "return-my",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "return-your",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "dont-lend",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "notebook-your",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Changed your notebook to my notebook."
+        },
+        {
+          "case_id": "notebook-my",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "her-his",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Changed the owner from his to her while keeping the female recipient."
+        },
+        {
+          "case_id": "him-her",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Changed the owner from her to his while keeping the male recipient."
+        },
+        {
+          "case_id": "dont-return",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "dont-share",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "name-deadline",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "pass",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "quantity-negation",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "pass",
+          "finding": "No violation of the stated case requirements found in this output."
+        }
+      ]
+    },
+    "preservation_rule": {
+      "cases_reviewed": 12,
+      "ownership_errors": 5,
+      "results": [
+        {
+          "case_id": "umbrella-your",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Changed your umbrella to my umbrella."
+        },
+        {
+          "case_id": "return-my",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "return-your",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "dont-lend",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Kept do not, but changed your umbrella to my umbrella."
+        },
+        {
+          "case_id": "notebook-your",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Changed your notebook to my notebook."
+        },
+        {
+          "case_id": "notebook-my",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "her-his",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Changed the owner from his to her while keeping the female recipient."
+        },
+        {
+          "case_id": "him-her",
+          "ownership_and_participants": "fail",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "Changed the owner from her to his while keeping the male recipient."
+        },
+        {
+          "case_id": "dont-return",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "dont-share",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "not_applicable",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "name-deadline",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "pass",
+          "finding": "No violation of the stated case requirements found in this output."
+        },
+        {
+          "case_id": "quantity-negation",
+          "ownership_and_participants": "pass",
+          "request_polarity": "pass",
+          "action_and_object": "pass",
+          "politeness_and_rewrite_only": "pass",
+          "names_quantities_deadlines": "pass",
+          "finding": "No violation of the stated case requirements found in this output."
+        }
+      ]
+    }
+  },
+  "existing_ownership_errors_fixed": [],
+  "introduced_ownership_errors": [
+    "dont-lend"
+  ],
+  "deployment_decision": "Do not promote this prompt rule; keep published weights and demo unchanged. Targeted training is a future experiment."
+}
