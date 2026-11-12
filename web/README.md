@@ -18,10 +18,10 @@ An experimental 135M English assistant. **This browser chat runs v0.1.** Click L
 
 Try a starter prompt, including the labelled writing challenge. Each starter begins a fresh conversation. After a reply, use **Copy last exchange** to prepare feedback with the prompt, reply, earlier turns used, and exact model revision. Review the text before posting; nothing is submitted automatically.
 
-## Latest update: 9 November 2026
+## Latest update: 12 November 2026
 
-The [experimental v0.2 writing candidate](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1) is now published for local CPU testing. On 50 synthetic development prompts it matched 43 references, compared with 13 for v0.1. This is not general accuracy or an independent benchmark. It still makes article, subject, and ownership mistakes.
+The [experimental ownership candidate2](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-ownership-candidate2) is published for local CPU testing. Targeted training reduced ownership errors from 4 to 1 in 12 known cases. On 24 cases using constructions reserved before training, reference matches improved from 21 to 22. The earlier 50-case writing set fell from 43 to 42 reference matches, including grammar and email-preservation regressions. These small synthetic checks are not general accuracy or an independent benchmark.
 
-Read the [results and known failures](https://github.com/alkasima/Hakkillo/blob/main/EXPERIMENTS.md). Independent human review, the reserved holdout, and candidate ONNX/browser evaluation remain pending. The candidate is not used by this browser chat.
+Read the [results, frozen plan, and regressions](https://github.com/alkasima/Hakkillo/blob/main/reports/ownership-v1/RESULTS.md). The reserved cases are now inspected evidence; future tuning needs a new evaluation design. Independent human review and candidate ONNX/browser validation remain pending. The ownership candidate is not used by this browser chat.
 
-[Code and roadmap](https://github.com/alkasima/Hakkillo) · [v0.1 model card](https://huggingface.co/alkasima/Hakkillo-135M-v0.1) · [Writing candidate model card](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1)
+[Code and roadmap](https://github.com/alkasima/Hakkillo) · [v0.1 model card](https://huggingface.co/alkasima/Hakkillo-135M-v0.1) · [Ownership candidate model card](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-ownership-candidate2)

@@ -1,0 +1,27 @@
+{
+  "space": "alkasima/Hakkillo",
+  "previous_space_revision": "b38bf46d95bbcb34ca3a9e91d0cbaaa9b878834e",
+  "space_revision": "12786c2d1e07147ffdac668edc21afc87d516174",
+  "model_configuration_unchanged": true,
+  "model": {
+    "model_id": "alkasima/Hakkillo-135M-v0.1-ONNX",
+    "revision": "ee52b42d81b3f6ed9cf7dce2a6d93957d03b670c",
+    "download_mb": 141
+  },
+  "verification": {
+    "runtime": "RUNNING",
+    "current_revision": "12786c2d1e07147ffdac668edc21afc87d516174",
+    "asset_matches": {
+      "index.html": true,
+      "style.css": true,
+      "app.js": true,
+      "worker.js": true,
+      "feedback.mjs": true,
+      "model.json": true,
+      "README.md": true
+    },
+    "http_status": 200,
+    "live_announcement_found": true,
+    "fresh_visual_browser_check": "Not performed for this announcement-only update; served assets, runtime and model configuration were checked."
+  }
+}

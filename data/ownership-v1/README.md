@@ -14,3 +14,5 @@ Data, run settings, and evaluation policy are frozen before training in `reports
 The older `data/v0.2/writing_holdout.jsonl` is not used for this experiment. No examples from these new regression or reserved files are copied into training.
 
 The builder refuses to overwrite this directory. Tests verify hashes, split checks, forbidden constructions in training/history, and complete assistant-only targets. See `scripts/build_ownership_data.py` for the reproducible construction logic.
+
+**Reference erratum:** During baseline generation, the `Do not share our password` regression reference was found to be ungrammatical because the original renderer only handled `Don't`. `reference-errata.json` records the correct reference. Frozen files remain unchanged for audit; review and corrected-reference summaries apply the erratum. This affects neither training nor the reserved examples. The original renderer is preserved in the preregistration commit; the current renderer includes the fix for future data generation.

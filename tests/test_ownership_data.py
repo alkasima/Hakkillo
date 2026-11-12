@@ -7,10 +7,14 @@ from transformers import AutoTokenizer
 
 from hakkillo.data import encode_example
 from hakkillo.settings import BASE_MODEL, BASE_REVISION
-from scripts.build_ownership_data import FOLDER, ROOT, read_jsonl, validate
+from scripts.build_ownership_data import FOLDER, ROOT, polite, read_jsonl, validate
 
 
 class OwnershipDataTests(unittest.TestCase):
+    def test_both_negative_forms_keep_the_prohibition(self):
+        for source in ("Don't share our password.", "Do not share our password."):
+            self.assertEqual(polite(source), "Please do not share our password.")
+
     def setUp(self):
         self.groups = {name: read_jsonl(FOLDER / f"{name}.jsonl")
                        for name in ("train", "dev", "reserved", "regression")}

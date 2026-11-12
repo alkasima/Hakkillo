@@ -1,0 +1,9 @@
+{
+  "model_id": "alkasima/Hakkillo-135M-v0.2-ownership-candidate2",
+  "revision": "dc84ca9bd32a62497988a27e298b12dcd1388291",
+  "prompt": "Rewrite politely: Lend me your umbrella.",
+  "response": "Could you please lend me your umbrella?",
+  "expected": "Could you please lend me your umbrella?",
+  "passed": true,
+  "scope": "Packaging smoke check from the pinned published adapter; original system prompt, CPU float32, greedy, max_new_tokens=64, repetition_penalty=1.08. Not an additional benchmark."
+}

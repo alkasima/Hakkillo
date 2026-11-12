@@ -1,0 +1,17 @@
+{
+  "published_at_utc": "2026-11-12T09:35:35.017576+00:00",
+  "model_id": "alkasima/Hakkillo-135M-v0.2-ownership-candidate2",
+  "model_url": "https://huggingface.co/alkasima/Hakkillo-135M-v0.2-ownership-candidate2",
+  "revision": "dc84ca9bd32a62497988a27e298b12dcd1388291",
+  "adapter_sha256": "78f34236ea8b49fe05a9b2d1ebdd14f15225f467324047a2e2ce4b8f9e183113",
+  "downloaded_weight_checksum_verified": true,
+  "status": "Experimental ownership checkpoint with broader writing regressions; not promoted to browser",
+  "reserved_evaluation": "24 cases generated once per model after the fixed run; now inspected evidence",
+  "candidate_onnx_or_browser_evaluation_completed": false,
+  "browser_model": {
+    "model_id": "alkasima/Hakkillo-135M-v0.1-ONNX",
+    "revision": "ee52b42d81b3f6ed9cf7dce2a6d93957d03b670c",
+    "download_mb": 141
+  },
+  "model_card_revision": "4a510f395c9e098d55af99eab16bcd205dc51eb8"
+}

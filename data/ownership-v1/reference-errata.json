@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-12",
+  "discovered": "During baseline evaluation, before inspecting candidate2 outputs",
+  "scope": "Reference-only correction for one regression example; frozen training, development, reserved files, model weights, and actual generation inputs/outputs are unchanged.",
+  "corrections": [
+    {"group": "regression", "id": "dont-share", "frozen_reference": "Could you please do not share our password?", "correct_reference": "Please do not share our password.", "reason": "The reference renderer handled Don't but omitted the equivalent Do not prefix. The original frozen reference is ungrammatical and must not count against a valid model answer."}
+  ],
+  "reporting": "Keep frozen data and raw literal-match fields for audit. Apply this erratum in the separate qualitative review and clearly label any corrected reference-match summary. This has no effect on training loss or reserved-pattern results. The corrected renderer is for future data generation; do not regenerate this frozen experiment in place."
+}

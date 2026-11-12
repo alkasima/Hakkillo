@@ -8,6 +8,12 @@ Hakkillo starts with [SmolLM2-135M-Instruct](https://huggingface.co/HuggingFaceT
 
 This is an early learning and development release. It is not pretrained from scratch and is not competitive with large assistants. Its starter dataset is deliberately tiny; lower loss on that dataset does not establish general improvement.
 
+## Ownership checkpoint, 12 November 2026
+
+[Experimental candidate2](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-ownership-candidate2) · [Full results and regressions](reports/ownership-v1/RESULTS.md)
+
+Targeted CPU training reduced ownership errors from 4 to 1 in the 12 known cases. On 24 cases using sentence constructions reserved before training, matches rose from 21 to 22. The older 50-case writing test fell from 43 to 42 reference matches, with new grammar and email-preservation failures. This checkpoint is experimental; the browser chat remains v0.1.
+
 ## Community follow-up, 10 November 2026
 
 We ran the umbrella examples suggested on X against both published adapters. The writing candidate preserved ownership and negation on the three suggested cases; the original ownership error still reproduces. [Read the exact outputs and separate checks](reports/community/2026-11-10.md). This adds evaluation evidence, not new model weights. The browser demo still runs v0.1.

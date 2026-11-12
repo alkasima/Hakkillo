@@ -1,0 +1,1317 @@
+{
+  "reviewer": "AI coding assistant; qualitative review of all primary-group outputs against the authored requirements. Not independent or blind human evaluation.",
+  "reference_errata": "data/ownership-v1/reference-errata.json",
+  "raw_outputs_sha256": "a5cdae485e188dde2328aac9d665fabf66ab1873c415d812025fe66f350fcd59",
+  "groups": {
+    "regression": {
+      "candidate1": {
+        "cases": 12,
+        "ownership_errors": 4,
+        "qualitative_passes": 8,
+        "corrected_reference_matches": 8,
+        "raw_reference_matches": 7,
+        "by_construction": {
+          "known_regression": {
+            "cases": 12,
+            "qualitative_passes": 8
+          }
+        },
+        "results": [
+          {
+            "id": "umbrella-your",
+            "family": "known_regression",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the umbrella owner from your to my."
+          },
+          {
+            "id": "return-my",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "return-your",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dont-lend",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "notebook-your",
+            "family": "known_regression",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the notebook owner from your to my."
+          },
+          {
+            "id": "notebook-my",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "her-his",
+            "family": "known_regression",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the draft owner from his to her; recipient unchanged."
+          },
+          {
+            "id": "him-her",
+            "family": "known_regression",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the draft owner from her to his; recipient unchanged."
+          },
+          {
+            "id": "dont-return",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dont-share",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": true,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "name-deadline",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "quantity-negation",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          }
+        ]
+      },
+      "candidate2": {
+        "cases": 12,
+        "ownership_errors": 1,
+        "qualitative_passes": 11,
+        "corrected_reference_matches": 11,
+        "raw_reference_matches": 10,
+        "by_construction": {
+          "known_regression": {
+            "cases": 12,
+            "qualitative_passes": 11
+          }
+        },
+        "results": [
+          {
+            "id": "umbrella-your",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "return-my",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "return-your",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dont-lend",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "notebook-your",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "notebook-my",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "her-his",
+            "family": "known_regression",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the draft owner from his to her; recipient unchanged."
+          },
+          {
+            "id": "him-her",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dont-return",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dont-share",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": true,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "name-deadline",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "quantity-negation",
+            "family": "known_regression",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          }
+        ]
+      }
+    },
+    "dev": {
+      "candidate1": {
+        "cases": 16,
+        "ownership_errors": 3,
+        "qualitative_passes": 13,
+        "corrected_reference_matches": 13,
+        "raw_reference_matches": 13,
+        "by_construction": {
+          "simple_owner": {
+            "cases": 4,
+            "qualitative_passes": 4
+          },
+          "transfer_to": {
+            "cases": 4,
+            "qualitative_passes": 4
+          },
+          "lend_to_me": {
+            "cases": 4,
+            "qualitative_passes": 1
+          },
+          "negative_lend": {
+            "cases": 4,
+            "qualitative_passes": 4
+          }
+        },
+        "results": [
+          {
+            "id": "dev-simple_owner-1",
+            "family": "simple_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-transfer_to-1",
+            "family": "transfer_to",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-lend_to_me-1",
+            "family": "lend_to_me",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-negative_lend-1",
+            "family": "negative_lend",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-simple_owner-2",
+            "family": "simple_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-transfer_to-2",
+            "family": "transfer_to",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-lend_to_me-2",
+            "family": "lend_to_me",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the folder owner from your to my."
+          },
+          {
+            "id": "dev-negative_lend-2",
+            "family": "negative_lend",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-simple_owner-3",
+            "family": "simple_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-transfer_to-3",
+            "family": "transfer_to",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-lend_to_me-3",
+            "family": "lend_to_me",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the jacket owner from his to my."
+          },
+          {
+            "id": "dev-negative_lend-3",
+            "family": "negative_lend",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-simple_owner-4",
+            "family": "simple_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-transfer_to-4",
+            "family": "transfer_to",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-lend_to_me-4",
+            "family": "lend_to_me",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the receipt owner from her to my."
+          },
+          {
+            "id": "dev-negative_lend-4",
+            "family": "negative_lend",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          }
+        ]
+      },
+      "candidate2": {
+        "cases": 16,
+        "ownership_errors": 0,
+        "qualitative_passes": 16,
+        "corrected_reference_matches": 16,
+        "raw_reference_matches": 16,
+        "by_construction": {
+          "simple_owner": {
+            "cases": 4,
+            "qualitative_passes": 4
+          },
+          "transfer_to": {
+            "cases": 4,
+            "qualitative_passes": 4
+          },
+          "lend_to_me": {
+            "cases": 4,
+            "qualitative_passes": 4
+          },
+          "negative_lend": {
+            "cases": 4,
+            "qualitative_passes": 4
+          }
+        },
+        "results": [
+          {
+            "id": "dev-simple_owner-1",
+            "family": "simple_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-transfer_to-1",
+            "family": "transfer_to",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-lend_to_me-1",
+            "family": "lend_to_me",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-negative_lend-1",
+            "family": "negative_lend",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-simple_owner-2",
+            "family": "simple_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-transfer_to-2",
+            "family": "transfer_to",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-lend_to_me-2",
+            "family": "lend_to_me",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-negative_lend-2",
+            "family": "negative_lend",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-simple_owner-3",
+            "family": "simple_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-transfer_to-3",
+            "family": "transfer_to",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-lend_to_me-3",
+            "family": "lend_to_me",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-negative_lend-3",
+            "family": "negative_lend",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-simple_owner-4",
+            "family": "simple_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-transfer_to-4",
+            "family": "transfer_to",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-lend_to_me-4",
+            "family": "lend_to_me",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "dev-negative_lend-4",
+            "family": "negative_lend",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          }
+        ]
+      }
+    },
+    "reserved": {
+      "candidate1": {
+        "cases": 24,
+        "ownership_errors": 3,
+        "qualitative_passes": 21,
+        "corrected_reference_matches": 21,
+        "raw_reference_matches": 21,
+        "by_construction": {
+          "relative_owner": {
+            "cases": 8,
+            "qualitative_passes": 8
+          },
+          "contrast_owner": {
+            "cases": 8,
+            "qualitative_passes": 7
+          },
+          "coordinated_owners": {
+            "cases": 8,
+            "qualitative_passes": 6
+          }
+        },
+        "results": [
+          {
+            "id": "relative-01",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-02",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-03",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-04",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-05",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-06",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-07",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-08",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-01",
+            "family": "contrast_owner",
+            "ownership_and_participants": "fail",
+            "negation_scope": "fail",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the excluded owner from yours to mine, making the contrast contradict the requested object."
+          },
+          {
+            "id": "contrast-02",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-03",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-04",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-05",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-06",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-07",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-08",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-01",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-02",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-03",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the coat owner from her to his."
+          },
+          {
+            "id": "coordinated-04",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-05",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the badge owner from their to its."
+          },
+          {
+            "id": "coordinated-06",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-07",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-08",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          }
+        ]
+      },
+      "candidate2": {
+        "cases": 24,
+        "ownership_errors": 2,
+        "qualitative_passes": 22,
+        "corrected_reference_matches": 22,
+        "raw_reference_matches": 22,
+        "by_construction": {
+          "relative_owner": {
+            "cases": 8,
+            "qualitative_passes": 8
+          },
+          "contrast_owner": {
+            "cases": 8,
+            "qualitative_passes": 8
+          },
+          "coordinated_owners": {
+            "cases": 8,
+            "qualitative_passes": 6
+          }
+        },
+        "results": [
+          {
+            "id": "relative-01",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-02",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-03",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-04",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-05",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-06",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-07",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "relative-08",
+            "family": "relative_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-01",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-02",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-03",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-04",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-05",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-06",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-07",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "contrast-08",
+            "family": "contrast_owner",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-01",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-02",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-03",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the coat owner from her to his."
+          },
+          {
+            "id": "coordinated-04",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-05",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "fail",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": false,
+            "reference_erratum_applied": false,
+            "finding": "Changed the badge owner from their to its."
+          },
+          {
+            "id": "coordinated-06",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-07",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          },
+          {
+            "id": "coordinated-08",
+            "family": "coordinated_owners",
+            "ownership_and_participants": "pass",
+            "negation_scope": "pass",
+            "action_and_object": "pass",
+            "politeness": "pass",
+            "corrected_reference_match": true,
+            "reference_erratum_applied": false,
+            "finding": "No violation found in this output."
+          }
+        ]
+      }
+    }
+  },
+  "candidate2_status": "Experimental ownership checkpoint; do not promote to stable or browser demo because ownership errors and broader regressions remain.",
+  "broader_writing": {
+    "candidate1_reference_matches": 43,
+    "candidate2_reference_matches": 42,
+    "cases": 50,
+    "new_failures": [
+      "g03: repeats I has three pencils instead of correcting has to have.",
+      "g08: repeats can sings instead of correcting sings to sing.",
+      "c09: changes coordinator@example.org into coordinator at example.org.",
+      "p18: changes a request to know availability into a request to indicate availability; both versions missed the exact reference, so the reference count alone hides this semantic regression."
+    ],
+    "improvements": [
+      "p07: preserves your umbrella.",
+      "g06: now matches finished rather than completed; the previous wording was already a reasonable correction."
+    ],
+    "persisting_failures": [
+      "g10: incorrect article before honest.",
+      "g16: still fails grammar correction; candidate2 answers the question and invents a negative claim."
+    ]
+  },
+  "general_smoke": {
+    "unchanged_limitations": [
+      "Invents current Lagos weather without web access.",
+      "Poor laptop charging advice.",
+      "Ignores just-number and two-sentence constraints.",
+      "Summary omits the new shoots."
+    ],
+    "scope": "Eight familiar development prompts, not a broad capability or safety assessment."
+  },
+  "reserved_policy": "All 24 reserved outputs were generated after the frozen run; no training/hyperparameter change followed. These examples are now inspected evidence and cannot serve as fresh holdout for later tuning."
+}

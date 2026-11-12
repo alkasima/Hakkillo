@@ -21,6 +21,8 @@ def read_jsonl(path):
 def polite(sentence):
     if sentence.startswith("Don't "):
         return "Please do not " + sentence[6:]
+    if sentence.startswith("Do not "):
+        return "Please do not " + sentence[7:]
     return "Could you please " + sentence[0].lower() + sentence[1:-1] + "?"
 
 

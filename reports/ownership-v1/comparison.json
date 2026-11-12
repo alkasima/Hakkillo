@@ -1,0 +1,1886 @@
+{
+  "created_at_utc": "2026-11-12T09:24:58.932756+00:00",
+  "preregistered_plan_commit": "9a54501ff34ac51cfe829efa22e919358190521f",
+  "plan": {
+    "date": "2026-11-12",
+    "status_at_commit": "Plan and all data frozen before training or generation on the 24 reserved cases",
+    "hypothesis": "Balanced examples preserving owners and participant roles may reduce the writing candidate's ownership errors, with separately reported transfer to reserved constructions.",
+    "initial_adapter": "alkasima/Hakkillo-135M-v0.2-writing-candidate1",
+    "initial_adapter_revision": "829fc0b86824c276b8fe9b8a566c7bcd63ab41fb",
+    "initial_adapter_sha256": "6772cf97cde238a51aecd7eb8419aca100d4b43a6ce017800b3d20da08f49a84",
+    "new_adapter": "artifacts/hakkillo-135m-v0.2-ownership-candidate2",
+    "training": {
+      "steps": 384,
+      "epochs_over_192_requests": 2,
+      "learning_rate": 0.0001,
+      "batch_size": 1,
+      "threads": 4,
+      "seed": 42,
+      "max_length": 256,
+      "dtype": "float32",
+      "device": "cpu",
+      "optimizer": "fresh AdamW; continue adapter weights, not optimizer state"
+    },
+    "data_sha256": {
+      "train.jsonl": "5385cca3a8694235ae76827371d75413deb7bde984923eab9b58cfc793826674",
+      "dev.jsonl": "3b4c584075516c624ee6bf0672e046c33443fe9a8b84bb1c3ec4e4b9bbb6c0d0",
+      "reserved.jsonl": "00eb06039ab2348f5688a6b48775079c528711bc592855c6b98acd0d4b6569aa",
+      "regression.jsonl": "27539a6c92af7e7663c441d4d9ae676f12f4cf9f9afcaa9f8ac9ea905459ab31"
+    },
+    "evaluation": {
+      "models": [
+        "published writing candidate1",
+        "single new ownership candidate2"
+      ],
+      "groups": {
+        "regression": 12,
+        "dev": 16,
+        "reserved": 24
+      },
+      "generation": {
+        "max_new_tokens": 64,
+        "repetition_penalty": 1.08,
+        "do_sample": false,
+        "history": []
+      },
+      "prompt": "Rewrite politely: {source}",
+      "review": "Compare complete outputs with case requirements; report ownership, negation, action and extra invented information. Exact reference matches are only a diagnostic, not semantic accuracy.",
+      "additional_checks": "Existing 50 writing-development prompts and original general smoke cases for regression inspection; no old reserved holdout."
+    },
+    "selection_policy": "One fixed training run. No hyperparameter or example changes in response to reserved outputs. Review all outputs and report per construction. Any later tuned run needs newly reserved patterns/data to support a fresh generalization claim.",
+    "promotion_policy": "No automatic stable or browser promotion. Any published adapter must remain experimental and include its failures and evaluation scope."
+  },
+  "training_run_completed_before_reserved_generation": true,
+  "base_model": "HuggingFaceTB/SmolLM2-135M-Instruct",
+  "base_revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+  "system_prompt": "You are Hakkillo, a small English AI assistant. Give clear, brief and helpful answers. If you do not know, say so. You cannot browse the web or take actions.",
+  "decoding": "Python float32 CPU; greedy; max_new_tokens=64; repetition_penalty=1.08; empty history",
+  "candidate2_adapter_sha256": "78f34236ea8b49fe05a9b2d1ebdd14f15225f467324047a2e2ce4b8f9e183113",
+  "caveat": "Exact reference matches are diagnostics only. Review complete outputs for ownership, roles, negation, actions and added content; report groups separately. Reserved cases are now inspected and are not a fresh holdout for later tuning.",
+  "completed": true,
+  "models": {
+    "candidate1": {
+      "regression": {
+        "cases": 12,
+        "reference_matches": 7,
+        "families": {
+          "known_regression": {
+            "cases": 12,
+            "reference_matches": 7
+          }
+        },
+        "results": [
+          {
+            "id": "umbrella-your",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Lend me your umbrella.",
+            "prompt": "Rewrite politely: Lend me your umbrella.",
+            "response": "Could you please lend me my umbrella?",
+            "reference": "Could you please lend me your umbrella?",
+            "reference_match": false,
+            "seconds": 2.123
+          },
+          {
+            "id": "return-my",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Return my umbrella.",
+            "prompt": "Rewrite politely: Return my umbrella.",
+            "response": "Could you please return my umbrella?",
+            "reference": "Could you please return my umbrella?",
+            "reference_match": true,
+            "seconds": 1.293
+          },
+          {
+            "id": "return-your",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Return your umbrella.",
+            "prompt": "Rewrite politely: Return your umbrella.",
+            "response": "Could you please return your umbrella?",
+            "reference": "Could you please return your umbrella?",
+            "reference_match": true,
+            "seconds": 1.696
+          },
+          {
+            "id": "dont-lend",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Don't lend me your umbrella.",
+            "prompt": "Rewrite politely: Don't lend me your umbrella.",
+            "response": "Please do not lend me your umbrella.",
+            "reference": "Please do not lend me your umbrella.",
+            "reference_match": true,
+            "seconds": 1.291
+          },
+          {
+            "id": "notebook-your",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Lend me your notebook.",
+            "prompt": "Rewrite politely: Lend me your notebook.",
+            "response": "Could you please lend me my notebook?",
+            "reference": "Could you please lend me your notebook?",
+            "reference_match": false,
+            "seconds": 1.28
+          },
+          {
+            "id": "notebook-my",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Lend me my notebook.",
+            "prompt": "Rewrite politely: Lend me my notebook.",
+            "response": "Could you please lend me my notebook?",
+            "reference": "Could you please lend me my notebook?",
+            "reference_match": true,
+            "seconds": 1.428
+          },
+          {
+            "id": "her-his",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Send her his draft.",
+            "prompt": "Rewrite politely: Send her his draft.",
+            "response": "Could you please send her her draft?",
+            "reference": "Could you please send her his draft?",
+            "reference_match": false,
+            "seconds": 1.675
+          },
+          {
+            "id": "him-her",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Send him her draft.",
+            "prompt": "Rewrite politely: Send him her draft.",
+            "response": "Could you please send him his draft?",
+            "reference": "Could you please send him her draft?",
+            "reference_match": false,
+            "seconds": 1.471
+          },
+          {
+            "id": "dont-return",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Don't return my charger.",
+            "prompt": "Rewrite politely: Don't return my charger.",
+            "response": "Please do not return my charger.",
+            "reference": "Please do not return my charger.",
+            "reference_match": true,
+            "seconds": 1.204
+          },
+          {
+            "id": "dont-share",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Do not share our password.",
+            "prompt": "Rewrite politely: Do not share our password.",
+            "response": "Please do not share our password.",
+            "reference": "Could you please do not share our password?",
+            "reference_match": false,
+            "seconds": 1.308
+          },
+          {
+            "id": "name-deadline",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Return Lina's keys by Friday.",
+            "prompt": "Rewrite politely: Return Lina's keys by Friday.",
+            "response": "Could you please return Lina's keys by Friday?",
+            "reference": "Could you please return Lina's keys by Friday?",
+            "reference_match": true,
+            "seconds": 1.531
+          },
+          {
+            "id": "quantity-negation",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Send me 3 copies, not 5.",
+            "prompt": "Rewrite politely: Send me 3 copies, not 5.",
+            "response": "Could you please send me 3 copies, not 5?",
+            "reference": "Could you please send me 3 copies, not 5?",
+            "reference_match": true,
+            "seconds": 1.669
+          }
+        ]
+      },
+      "dev": {
+        "cases": 16,
+        "reference_matches": 13,
+        "families": {
+          "simple_owner": {
+            "cases": 4,
+            "reference_matches": 4
+          },
+          "transfer_to": {
+            "cases": 4,
+            "reference_matches": 4
+          },
+          "lend_to_me": {
+            "cases": 4,
+            "reference_matches": 1
+          },
+          "negative_lend": {
+            "cases": 4,
+            "reference_matches": 4
+          }
+        },
+        "results": [
+          {
+            "id": "dev-simple_owner-1",
+            "family": "simple_owner",
+            "split": "dev",
+            "source": "Return my manual.",
+            "prompt": "Rewrite politely: Return my manual.",
+            "response": "Could you please return my manual?",
+            "reference": "Could you please return my manual?",
+            "reference_match": true,
+            "seconds": 1.239
+          },
+          {
+            "id": "dev-transfer_to-1",
+            "family": "transfer_to",
+            "split": "dev",
+            "source": "Send my manual to him.",
+            "prompt": "Rewrite politely: Send my manual to him.",
+            "response": "Could you please send my manual to him?",
+            "reference": "Could you please send my manual to him?",
+            "reference_match": true,
+            "seconds": 1.46
+          },
+          {
+            "id": "dev-lend_to_me-1",
+            "family": "lend_to_me",
+            "split": "dev",
+            "source": "Lend me my manual.",
+            "prompt": "Rewrite politely: Lend me my manual.",
+            "response": "Could you please lend me my manual?",
+            "reference": "Could you please lend me my manual?",
+            "reference_match": true,
+            "seconds": 1.247
+          },
+          {
+            "id": "dev-negative_lend-1",
+            "family": "negative_lend",
+            "split": "dev",
+            "source": "Don't lend me my manual.",
+            "prompt": "Rewrite politely: Don't lend me my manual.",
+            "response": "Please do not lend me my manual.",
+            "reference": "Please do not lend me my manual.",
+            "reference_match": true,
+            "seconds": 1.314
+          },
+          {
+            "id": "dev-simple_owner-2",
+            "family": "simple_owner",
+            "split": "dev",
+            "source": "Return your folder.",
+            "prompt": "Rewrite politely: Return your folder.",
+            "response": "Could you please return your folder?",
+            "reference": "Could you please return your folder?",
+            "reference_match": true,
+            "seconds": 1.38
+          },
+          {
+            "id": "dev-transfer_to-2",
+            "family": "transfer_to",
+            "split": "dev",
+            "source": "Send your folder to her.",
+            "prompt": "Rewrite politely: Send your folder to her.",
+            "response": "Could you please send your folder to her?",
+            "reference": "Could you please send your folder to her?",
+            "reference_match": true,
+            "seconds": 1.705
+          },
+          {
+            "id": "dev-lend_to_me-2",
+            "family": "lend_to_me",
+            "split": "dev",
+            "source": "Lend me your folder.",
+            "prompt": "Rewrite politely: Lend me your folder.",
+            "response": "Could you please lend me my folder?",
+            "reference": "Could you please lend me your folder?",
+            "reference_match": false,
+            "seconds": 1.376
+          },
+          {
+            "id": "dev-negative_lend-2",
+            "family": "negative_lend",
+            "split": "dev",
+            "source": "Don't lend me your folder.",
+            "prompt": "Rewrite politely: Don't lend me your folder.",
+            "response": "Please do not lend me your folder.",
+            "reference": "Please do not lend me your folder.",
+            "reference_match": true,
+            "seconds": 1.382
+          },
+          {
+            "id": "dev-simple_owner-3",
+            "family": "simple_owner",
+            "split": "dev",
+            "source": "Return his jacket.",
+            "prompt": "Rewrite politely: Return his jacket.",
+            "response": "Could you please return his jacket?",
+            "reference": "Could you please return his jacket?",
+            "reference_match": true,
+            "seconds": 1.207
+          },
+          {
+            "id": "dev-transfer_to-3",
+            "family": "transfer_to",
+            "split": "dev",
+            "source": "Send his jacket to us.",
+            "prompt": "Rewrite politely: Send his jacket to us.",
+            "response": "Could you please send his jacket to us?",
+            "reference": "Could you please send his jacket to us?",
+            "reference_match": true,
+            "seconds": 1.503
+          },
+          {
+            "id": "dev-lend_to_me-3",
+            "family": "lend_to_me",
+            "split": "dev",
+            "source": "Lend me his jacket.",
+            "prompt": "Rewrite politely: Lend me his jacket.",
+            "response": "Could you please lend me my jacket?",
+            "reference": "Could you please lend me his jacket?",
+            "reference_match": false,
+            "seconds": 1.524
+          },
+          {
+            "id": "dev-negative_lend-3",
+            "family": "negative_lend",
+            "split": "dev",
+            "source": "Don't lend me his jacket.",
+            "prompt": "Rewrite politely: Don't lend me his jacket.",
+            "response": "Please do not lend me his jacket.",
+            "reference": "Please do not lend me his jacket.",
+            "reference_match": true,
+            "seconds": 1.468
+          },
+          {
+            "id": "dev-simple_owner-4",
+            "family": "simple_owner",
+            "split": "dev",
+            "source": "Return her receipt.",
+            "prompt": "Rewrite politely: Return her receipt.",
+            "response": "Could you please return her receipt?",
+            "reference": "Could you please return her receipt?",
+            "reference_match": true,
+            "seconds": 1.282
+          },
+          {
+            "id": "dev-transfer_to-4",
+            "family": "transfer_to",
+            "split": "dev",
+            "source": "Send her receipt to me.",
+            "prompt": "Rewrite politely: Send her receipt to me.",
+            "response": "Could you please send her receipt to me?",
+            "reference": "Could you please send her receipt to me?",
+            "reference_match": true,
+            "seconds": 1.486
+          },
+          {
+            "id": "dev-lend_to_me-4",
+            "family": "lend_to_me",
+            "split": "dev",
+            "source": "Lend me her receipt.",
+            "prompt": "Rewrite politely: Lend me her receipt.",
+            "response": "Could you please lend me my receipt?",
+            "reference": "Could you please lend me her receipt?",
+            "reference_match": false,
+            "seconds": 1.335
+          },
+          {
+            "id": "dev-negative_lend-4",
+            "family": "negative_lend",
+            "split": "dev",
+            "source": "Don't lend me her receipt.",
+            "prompt": "Rewrite politely: Don't lend me her receipt.",
+            "response": "Please do not lend me her receipt.",
+            "reference": "Please do not lend me her receipt.",
+            "reference_match": true,
+            "seconds": 1.366
+          }
+        ]
+      },
+      "reserved": {
+        "cases": 24,
+        "reference_matches": 21,
+        "families": {
+          "relative_owner": {
+            "cases": 8,
+            "reference_matches": 8
+          },
+          "contrast_owner": {
+            "cases": 8,
+            "reference_matches": 7
+          },
+          "coordinated_owners": {
+            "cases": 8,
+            "reference_matches": 6
+          }
+        },
+        "results": [
+          {
+            "id": "relative-01",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the parcel that belongs to me.",
+            "prompt": "Rewrite politely: Return the parcel that belongs to me.",
+            "response": "Could you please return the parcel that belongs to me?",
+            "reference": "Could you please return the parcel that belongs to me?",
+            "reference_match": true,
+            "seconds": 1.715
+          },
+          {
+            "id": "relative-02",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the badge that belongs to you.",
+            "prompt": "Rewrite politely: Return the badge that belongs to you.",
+            "response": "Could you please return the badge that belongs to you?",
+            "reference": "Could you please return the badge that belongs to you?",
+            "reference_match": true,
+            "seconds": 1.842
+          },
+          {
+            "id": "relative-03",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the helmet that belongs to him.",
+            "prompt": "Rewrite politely: Return the helmet that belongs to him.",
+            "response": "Could you please return the helmet that belongs to him?",
+            "reference": "Could you please return the helmet that belongs to him?",
+            "reference_match": true,
+            "seconds": 1.638
+          },
+          {
+            "id": "relative-04",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the wallet that belongs to her.",
+            "prompt": "Rewrite politely: Return the wallet that belongs to her.",
+            "response": "Could you please return the wallet that belongs to her?",
+            "reference": "Could you please return the wallet that belongs to her?",
+            "reference_match": true,
+            "seconds": 1.486
+          },
+          {
+            "id": "relative-05",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the pencil that belongs to us.",
+            "prompt": "Rewrite politely: Return the pencil that belongs to us.",
+            "response": "Could you please return the pencil that belongs to us?",
+            "reference": "Could you please return the pencil that belongs to us?",
+            "reference_match": true,
+            "seconds": 1.476
+          },
+          {
+            "id": "relative-06",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the coat that belongs to them.",
+            "prompt": "Rewrite politely: Return the coat that belongs to them.",
+            "response": "Could you please return the coat that belongs to them?",
+            "reference": "Could you please return the coat that belongs to them?",
+            "reference_match": true,
+            "seconds": 1.55
+          },
+          {
+            "id": "relative-07",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the plate that belongs to Nora.",
+            "prompt": "Rewrite politely: Return the plate that belongs to Nora.",
+            "response": "Could you please return the plate that belongs to Nora?",
+            "reference": "Could you please return the plate that belongs to Nora?",
+            "reference_match": true,
+            "seconds": 1.625
+          },
+          {
+            "id": "relative-08",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the bottle that belongs to Tariq.",
+            "prompt": "Rewrite politely: Return the bottle that belongs to Tariq.",
+            "response": "Could you please return the bottle that belongs to Tariq?",
+            "reference": "Could you please return the bottle that belongs to Tariq?",
+            "reference_match": true,
+            "seconds": 1.876
+          },
+          {
+            "id": "contrast-01",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return my parcel, not yours.",
+            "prompt": "Rewrite politely: Return my parcel, not yours.",
+            "response": "Could you please return my parcel, not mine?",
+            "reference": "Could you please return my parcel, not yours?",
+            "reference_match": false,
+            "seconds": 1.475
+          },
+          {
+            "id": "contrast-02",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return your badge, not mine.",
+            "prompt": "Rewrite politely: Return your badge, not mine.",
+            "response": "Could you please return your badge, not mine?",
+            "reference": "Could you please return your badge, not mine?",
+            "reference_match": true,
+            "seconds": 1.474
+          },
+          {
+            "id": "contrast-03",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return his helmet, not hers.",
+            "prompt": "Rewrite politely: Return his helmet, not hers.",
+            "response": "Could you please return his helmet, not hers?",
+            "reference": "Could you please return his helmet, not hers?",
+            "reference_match": true,
+            "seconds": 1.487
+          },
+          {
+            "id": "contrast-04",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return her wallet, not his.",
+            "prompt": "Rewrite politely: Return her wallet, not his.",
+            "response": "Could you please return her wallet, not his?",
+            "reference": "Could you please return her wallet, not his?",
+            "reference_match": true,
+            "seconds": 1.485
+          },
+          {
+            "id": "contrast-05",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return our pencil, not theirs.",
+            "prompt": "Rewrite politely: Return our pencil, not theirs.",
+            "response": "Could you please return our pencil, not theirs?",
+            "reference": "Could you please return our pencil, not theirs?",
+            "reference_match": true,
+            "seconds": 1.542
+          },
+          {
+            "id": "contrast-06",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return their coat, not ours.",
+            "prompt": "Rewrite politely: Return their coat, not ours.",
+            "response": "Could you please return their coat, not ours?",
+            "reference": "Could you please return their coat, not ours?",
+            "reference_match": true,
+            "seconds": 1.815
+          },
+          {
+            "id": "contrast-07",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return my plate, not hers.",
+            "prompt": "Rewrite politely: Return my plate, not hers.",
+            "response": "Could you please return my plate, not hers?",
+            "reference": "Could you please return my plate, not hers?",
+            "reference_match": true,
+            "seconds": 1.505
+          },
+          {
+            "id": "contrast-08",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return your bottle, not his.",
+            "prompt": "Rewrite politely: Return your bottle, not his.",
+            "response": "Could you please return your bottle, not his?",
+            "reference": "Could you please return your bottle, not his?",
+            "reference_match": true,
+            "seconds": 1.458
+          },
+          {
+            "id": "coordinated-01",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return my parcel and your badge.",
+            "prompt": "Rewrite politely: Return my parcel and your badge.",
+            "response": "Could you please return my parcel and your badge?",
+            "reference": "Could you please return my parcel and your badge?",
+            "reference_match": true,
+            "seconds": 1.474
+          },
+          {
+            "id": "coordinated-02",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return your helmet and my wallet.",
+            "prompt": "Rewrite politely: Return your helmet and my wallet.",
+            "response": "Could you please return your helmet and my wallet?",
+            "reference": "Could you please return your helmet and my wallet?",
+            "reference_match": true,
+            "seconds": 1.491
+          },
+          {
+            "id": "coordinated-03",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return his pencil and her coat.",
+            "prompt": "Rewrite politely: Return his pencil and her coat.",
+            "response": "Could you please return his pencil and his coat?",
+            "reference": "Could you please return his pencil and her coat?",
+            "reference_match": false,
+            "seconds": 1.528
+          },
+          {
+            "id": "coordinated-04",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return her plate and his bottle.",
+            "prompt": "Rewrite politely: Return her plate and his bottle.",
+            "response": "Could you please return her plate and his bottle?",
+            "reference": "Could you please return her plate and his bottle?",
+            "reference_match": true,
+            "seconds": 1.668
+          },
+          {
+            "id": "coordinated-05",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return our parcel and their badge.",
+            "prompt": "Rewrite politely: Return our parcel and their badge.",
+            "response": "Could you please return our parcel and its badge?",
+            "reference": "Could you please return our parcel and their badge?",
+            "reference_match": false,
+            "seconds": 1.625
+          },
+          {
+            "id": "coordinated-06",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return their helmet and our wallet.",
+            "prompt": "Rewrite politely: Return their helmet and our wallet.",
+            "response": "Could you please return their helmet and our wallet?",
+            "reference": "Could you please return their helmet and our wallet?",
+            "reference_match": true,
+            "seconds": 1.503
+          },
+          {
+            "id": "coordinated-07",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return my pencil and her coat.",
+            "prompt": "Rewrite politely: Return my pencil and her coat.",
+            "response": "Could you please return my pencil and her coat?",
+            "reference": "Could you please return my pencil and her coat?",
+            "reference_match": true,
+            "seconds": 1.472
+          },
+          {
+            "id": "coordinated-08",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return your plate and his bottle.",
+            "prompt": "Rewrite politely: Return your plate and his bottle.",
+            "response": "Could you please return your plate and his bottle?",
+            "reference": "Could you please return your plate and his bottle?",
+            "reference_match": true,
+            "seconds": 1.46
+          }
+        ]
+      }
+    },
+    "candidate2": {
+      "regression": {
+        "cases": 12,
+        "reference_matches": 10,
+        "families": {
+          "known_regression": {
+            "cases": 12,
+            "reference_matches": 10
+          }
+        },
+        "results": [
+          {
+            "id": "umbrella-your",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Lend me your umbrella.",
+            "prompt": "Rewrite politely: Lend me your umbrella.",
+            "response": "Could you please lend me your umbrella?",
+            "reference": "Could you please lend me your umbrella?",
+            "reference_match": true,
+            "seconds": 1.37
+          },
+          {
+            "id": "return-my",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Return my umbrella.",
+            "prompt": "Rewrite politely: Return my umbrella.",
+            "response": "Could you please return my umbrella?",
+            "reference": "Could you please return my umbrella?",
+            "reference_match": true,
+            "seconds": 1.219
+          },
+          {
+            "id": "return-your",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Return your umbrella.",
+            "prompt": "Rewrite politely: Return your umbrella.",
+            "response": "Could you please return your umbrella?",
+            "reference": "Could you please return your umbrella?",
+            "reference_match": true,
+            "seconds": 1.145
+          },
+          {
+            "id": "dont-lend",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Don't lend me your umbrella.",
+            "prompt": "Rewrite politely: Don't lend me your umbrella.",
+            "response": "Please do not lend me your umbrella.",
+            "reference": "Please do not lend me your umbrella.",
+            "reference_match": true,
+            "seconds": 1.318
+          },
+          {
+            "id": "notebook-your",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Lend me your notebook.",
+            "prompt": "Rewrite politely: Lend me your notebook.",
+            "response": "Could you please lend me your notebook?",
+            "reference": "Could you please lend me your notebook?",
+            "reference_match": true,
+            "seconds": 1.305
+          },
+          {
+            "id": "notebook-my",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Lend me my notebook.",
+            "prompt": "Rewrite politely: Lend me my notebook.",
+            "response": "Could you please lend me my notebook?",
+            "reference": "Could you please lend me my notebook?",
+            "reference_match": true,
+            "seconds": 1.476
+          },
+          {
+            "id": "her-his",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Send her his draft.",
+            "prompt": "Rewrite politely: Send her his draft.",
+            "response": "Could you please send her her draft?",
+            "reference": "Could you please send her his draft?",
+            "reference_match": false,
+            "seconds": 1.348
+          },
+          {
+            "id": "him-her",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Send him her draft.",
+            "prompt": "Rewrite politely: Send him her draft.",
+            "response": "Could you please send him her draft?",
+            "reference": "Could you please send him her draft?",
+            "reference_match": true,
+            "seconds": 1.326
+          },
+          {
+            "id": "dont-return",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Don't return my charger.",
+            "prompt": "Rewrite politely: Don't return my charger.",
+            "response": "Please do not return my charger.",
+            "reference": "Please do not return my charger.",
+            "reference_match": true,
+            "seconds": 1.171
+          },
+          {
+            "id": "dont-share",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Do not share our password.",
+            "prompt": "Rewrite politely: Do not share our password.",
+            "response": "Please do not share our password.",
+            "reference": "Could you please do not share our password?",
+            "reference_match": false,
+            "seconds": 1.257
+          },
+          {
+            "id": "name-deadline",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Return Lina's keys by Friday.",
+            "prompt": "Rewrite politely: Return Lina's keys by Friday.",
+            "response": "Could you please return Lina's keys by Friday?",
+            "reference": "Could you please return Lina's keys by Friday?",
+            "reference_match": true,
+            "seconds": 1.653
+          },
+          {
+            "id": "quantity-negation",
+            "family": "known_regression",
+            "split": "regression",
+            "source": "Send me 3 copies, not 5.",
+            "prompt": "Rewrite politely: Send me 3 copies, not 5.",
+            "response": "Could you please send me 3 copies, not 5?",
+            "reference": "Could you please send me 3 copies, not 5?",
+            "reference_match": true,
+            "seconds": 1.972
+          }
+        ]
+      },
+      "dev": {
+        "cases": 16,
+        "reference_matches": 16,
+        "families": {
+          "simple_owner": {
+            "cases": 4,
+            "reference_matches": 4
+          },
+          "transfer_to": {
+            "cases": 4,
+            "reference_matches": 4
+          },
+          "lend_to_me": {
+            "cases": 4,
+            "reference_matches": 4
+          },
+          "negative_lend": {
+            "cases": 4,
+            "reference_matches": 4
+          }
+        },
+        "results": [
+          {
+            "id": "dev-simple_owner-1",
+            "family": "simple_owner",
+            "split": "dev",
+            "source": "Return my manual.",
+            "prompt": "Rewrite politely: Return my manual.",
+            "response": "Could you please return my manual?",
+            "reference": "Could you please return my manual?",
+            "reference_match": true,
+            "seconds": 1.204
+          },
+          {
+            "id": "dev-transfer_to-1",
+            "family": "transfer_to",
+            "split": "dev",
+            "source": "Send my manual to him.",
+            "prompt": "Rewrite politely: Send my manual to him.",
+            "response": "Could you please send my manual to him?",
+            "reference": "Could you please send my manual to him?",
+            "reference_match": true,
+            "seconds": 1.423
+          },
+          {
+            "id": "dev-lend_to_me-1",
+            "family": "lend_to_me",
+            "split": "dev",
+            "source": "Lend me my manual.",
+            "prompt": "Rewrite politely: Lend me my manual.",
+            "response": "Could you please lend me my manual?",
+            "reference": "Could you please lend me my manual?",
+            "reference_match": true,
+            "seconds": 1.268
+          },
+          {
+            "id": "dev-negative_lend-1",
+            "family": "negative_lend",
+            "split": "dev",
+            "source": "Don't lend me my manual.",
+            "prompt": "Rewrite politely: Don't lend me my manual.",
+            "response": "Please do not lend me my manual.",
+            "reference": "Please do not lend me my manual.",
+            "reference_match": true,
+            "seconds": 1.425
+          },
+          {
+            "id": "dev-simple_owner-2",
+            "family": "simple_owner",
+            "split": "dev",
+            "source": "Return your folder.",
+            "prompt": "Rewrite politely: Return your folder.",
+            "response": "Could you please return your folder?",
+            "reference": "Could you please return your folder?",
+            "reference_match": true,
+            "seconds": 1.243
+          },
+          {
+            "id": "dev-transfer_to-2",
+            "family": "transfer_to",
+            "split": "dev",
+            "source": "Send your folder to her.",
+            "prompt": "Rewrite politely: Send your folder to her.",
+            "response": "Could you please send your folder to her?",
+            "reference": "Could you please send your folder to her?",
+            "reference_match": true,
+            "seconds": 1.421
+          },
+          {
+            "id": "dev-lend_to_me-2",
+            "family": "lend_to_me",
+            "split": "dev",
+            "source": "Lend me your folder.",
+            "prompt": "Rewrite politely: Lend me your folder.",
+            "response": "Could you please lend me your folder?",
+            "reference": "Could you please lend me your folder?",
+            "reference_match": true,
+            "seconds": 1.282
+          },
+          {
+            "id": "dev-negative_lend-2",
+            "family": "negative_lend",
+            "split": "dev",
+            "source": "Don't lend me your folder.",
+            "prompt": "Rewrite politely: Don't lend me your folder.",
+            "response": "Please do not lend me your folder.",
+            "reference": "Please do not lend me your folder.",
+            "reference_match": true,
+            "seconds": 1.282
+          },
+          {
+            "id": "dev-simple_owner-3",
+            "family": "simple_owner",
+            "split": "dev",
+            "source": "Return his jacket.",
+            "prompt": "Rewrite politely: Return his jacket.",
+            "response": "Could you please return his jacket?",
+            "reference": "Could you please return his jacket?",
+            "reference_match": true,
+            "seconds": 1.216
+          },
+          {
+            "id": "dev-transfer_to-3",
+            "family": "transfer_to",
+            "split": "dev",
+            "source": "Send his jacket to us.",
+            "prompt": "Rewrite politely: Send his jacket to us.",
+            "response": "Could you please send his jacket to us?",
+            "reference": "Could you please send his jacket to us?",
+            "reference_match": true,
+            "seconds": 1.439
+          },
+          {
+            "id": "dev-lend_to_me-3",
+            "family": "lend_to_me",
+            "split": "dev",
+            "source": "Lend me his jacket.",
+            "prompt": "Rewrite politely: Lend me his jacket.",
+            "response": "Could you please lend me his jacket?",
+            "reference": "Could you please lend me his jacket?",
+            "reference_match": true,
+            "seconds": 1.51
+          },
+          {
+            "id": "dev-negative_lend-3",
+            "family": "negative_lend",
+            "split": "dev",
+            "source": "Don't lend me his jacket.",
+            "prompt": "Rewrite politely: Don't lend me his jacket.",
+            "response": "Please do not lend me his jacket.",
+            "reference": "Please do not lend me his jacket.",
+            "reference_match": true,
+            "seconds": 1.48
+          },
+          {
+            "id": "dev-simple_owner-4",
+            "family": "simple_owner",
+            "split": "dev",
+            "source": "Return her receipt.",
+            "prompt": "Rewrite politely: Return her receipt.",
+            "response": "Could you please return her receipt?",
+            "reference": "Could you please return her receipt?",
+            "reference_match": true,
+            "seconds": 1.227
+          },
+          {
+            "id": "dev-transfer_to-4",
+            "family": "transfer_to",
+            "split": "dev",
+            "source": "Send her receipt to me.",
+            "prompt": "Rewrite politely: Send her receipt to me.",
+            "response": "Could you please send her receipt to me?",
+            "reference": "Could you please send her receipt to me?",
+            "reference_match": true,
+            "seconds": 1.483
+          },
+          {
+            "id": "dev-lend_to_me-4",
+            "family": "lend_to_me",
+            "split": "dev",
+            "source": "Lend me her receipt.",
+            "prompt": "Rewrite politely: Lend me her receipt.",
+            "response": "Could you please lend me her receipt?",
+            "reference": "Could you please lend me her receipt?",
+            "reference_match": true,
+            "seconds": 1.311
+          },
+          {
+            "id": "dev-negative_lend-4",
+            "family": "negative_lend",
+            "split": "dev",
+            "source": "Don't lend me her receipt.",
+            "prompt": "Rewrite politely: Don't lend me her receipt.",
+            "response": "Please do not lend me her receipt.",
+            "reference": "Please do not lend me her receipt.",
+            "reference_match": true,
+            "seconds": 1.396
+          }
+        ]
+      },
+      "reserved": {
+        "cases": 24,
+        "reference_matches": 22,
+        "families": {
+          "relative_owner": {
+            "cases": 8,
+            "reference_matches": 8
+          },
+          "contrast_owner": {
+            "cases": 8,
+            "reference_matches": 8
+          },
+          "coordinated_owners": {
+            "cases": 8,
+            "reference_matches": 6
+          }
+        },
+        "results": [
+          {
+            "id": "relative-01",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the parcel that belongs to me.",
+            "prompt": "Rewrite politely: Return the parcel that belongs to me.",
+            "response": "Could you please return the parcel that belongs to me?",
+            "reference": "Could you please return the parcel that belongs to me?",
+            "reference_match": true,
+            "seconds": 1.6
+          },
+          {
+            "id": "relative-02",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the badge that belongs to you.",
+            "prompt": "Rewrite politely: Return the badge that belongs to you.",
+            "response": "Could you please return the badge that belongs to you?",
+            "reference": "Could you please return the badge that belongs to you?",
+            "reference_match": true,
+            "seconds": 1.598
+          },
+          {
+            "id": "relative-03",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the helmet that belongs to him.",
+            "prompt": "Rewrite politely: Return the helmet that belongs to him.",
+            "response": "Could you please return the helmet that belongs to him?",
+            "reference": "Could you please return the helmet that belongs to him?",
+            "reference_match": true,
+            "seconds": 1.59
+          },
+          {
+            "id": "relative-04",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the wallet that belongs to her.",
+            "prompt": "Rewrite politely: Return the wallet that belongs to her.",
+            "response": "Could you please return the wallet that belongs to her?",
+            "reference": "Could you please return the wallet that belongs to her?",
+            "reference_match": true,
+            "seconds": 1.613
+          },
+          {
+            "id": "relative-05",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the pencil that belongs to us.",
+            "prompt": "Rewrite politely: Return the pencil that belongs to us.",
+            "response": "Could you please return the pencil that belongs to us?",
+            "reference": "Could you please return the pencil that belongs to us?",
+            "reference_match": true,
+            "seconds": 1.597
+          },
+          {
+            "id": "relative-06",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the coat that belongs to them.",
+            "prompt": "Rewrite politely: Return the coat that belongs to them.",
+            "response": "Could you please return the coat that belongs to them?",
+            "reference": "Could you please return the coat that belongs to them?",
+            "reference_match": true,
+            "seconds": 1.628
+          },
+          {
+            "id": "relative-07",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the plate that belongs to Nora.",
+            "prompt": "Rewrite politely: Return the plate that belongs to Nora.",
+            "response": "Could you please return the plate that belongs to Nora?",
+            "reference": "Could you please return the plate that belongs to Nora?",
+            "reference_match": true,
+            "seconds": 1.722
+          },
+          {
+            "id": "relative-08",
+            "family": "relative_owner",
+            "split": "reserved",
+            "source": "Return the bottle that belongs to Tariq.",
+            "prompt": "Rewrite politely: Return the bottle that belongs to Tariq.",
+            "response": "Could you please return the bottle that belongs to Tariq?",
+            "reference": "Could you please return the bottle that belongs to Tariq?",
+            "reference_match": true,
+            "seconds": 2.711
+          },
+          {
+            "id": "contrast-01",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return my parcel, not yours.",
+            "prompt": "Rewrite politely: Return my parcel, not yours.",
+            "response": "Could you please return my parcel, not yours?",
+            "reference": "Could you please return my parcel, not yours?",
+            "reference_match": true,
+            "seconds": 1.742
+          },
+          {
+            "id": "contrast-02",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return your badge, not mine.",
+            "prompt": "Rewrite politely: Return your badge, not mine.",
+            "response": "Could you please return your badge, not mine?",
+            "reference": "Could you please return your badge, not mine?",
+            "reference_match": true,
+            "seconds": 1.785
+          },
+          {
+            "id": "contrast-03",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return his helmet, not hers.",
+            "prompt": "Rewrite politely: Return his helmet, not hers.",
+            "response": "Could you please return his helmet, not hers?",
+            "reference": "Could you please return his helmet, not hers?",
+            "reference_match": true,
+            "seconds": 1.571
+          },
+          {
+            "id": "contrast-04",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return her wallet, not his.",
+            "prompt": "Rewrite politely: Return her wallet, not his.",
+            "response": "Could you please return her wallet, not his?",
+            "reference": "Could you please return her wallet, not his?",
+            "reference_match": true,
+            "seconds": 1.582
+          },
+          {
+            "id": "contrast-05",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return our pencil, not theirs.",
+            "prompt": "Rewrite politely: Return our pencil, not theirs.",
+            "response": "Could you please return our pencil, not theirs?",
+            "reference": "Could you please return our pencil, not theirs?",
+            "reference_match": true,
+            "seconds": 1.542
+          },
+          {
+            "id": "contrast-06",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return their coat, not ours.",
+            "prompt": "Rewrite politely: Return their coat, not ours.",
+            "response": "Could you please return their coat, not ours?",
+            "reference": "Could you please return their coat, not ours?",
+            "reference_match": true,
+            "seconds": 1.535
+          },
+          {
+            "id": "contrast-07",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return my plate, not hers.",
+            "prompt": "Rewrite politely: Return my plate, not hers.",
+            "response": "Could you please return my plate, not hers?",
+            "reference": "Could you please return my plate, not hers?",
+            "reference_match": true,
+            "seconds": 1.507
+          },
+          {
+            "id": "contrast-08",
+            "family": "contrast_owner",
+            "split": "reserved",
+            "source": "Return your bottle, not his.",
+            "prompt": "Rewrite politely: Return your bottle, not his.",
+            "response": "Could you please return your bottle, not his?",
+            "reference": "Could you please return your bottle, not his?",
+            "reference_match": true,
+            "seconds": 1.445
+          },
+          {
+            "id": "coordinated-01",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return my parcel and your badge.",
+            "prompt": "Rewrite politely: Return my parcel and your badge.",
+            "response": "Could you please return my parcel and your badge?",
+            "reference": "Could you please return my parcel and your badge?",
+            "reference_match": true,
+            "seconds": 1.392
+          },
+          {
+            "id": "coordinated-02",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return your helmet and my wallet.",
+            "prompt": "Rewrite politely: Return your helmet and my wallet.",
+            "response": "Could you please return your helmet and my wallet?",
+            "reference": "Could you please return your helmet and my wallet?",
+            "reference_match": true,
+            "seconds": 1.411
+          },
+          {
+            "id": "coordinated-03",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return his pencil and her coat.",
+            "prompt": "Rewrite politely: Return his pencil and her coat.",
+            "response": "Could you please return his pencil and his coat?",
+            "reference": "Could you please return his pencil and her coat?",
+            "reference_match": false,
+            "seconds": 1.408
+          },
+          {
+            "id": "coordinated-04",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return her plate and his bottle.",
+            "prompt": "Rewrite politely: Return her plate and his bottle.",
+            "response": "Could you please return her plate and his bottle?",
+            "reference": "Could you please return her plate and his bottle?",
+            "reference_match": true,
+            "seconds": 1.403
+          },
+          {
+            "id": "coordinated-05",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return our parcel and their badge.",
+            "prompt": "Rewrite politely: Return our parcel and their badge.",
+            "response": "Could you please return our parcel and its badge?",
+            "reference": "Could you please return our parcel and their badge?",
+            "reference_match": false,
+            "seconds": 1.446
+          },
+          {
+            "id": "coordinated-06",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return their helmet and our wallet.",
+            "prompt": "Rewrite politely: Return their helmet and our wallet.",
+            "response": "Could you please return their helmet and our wallet?",
+            "reference": "Could you please return their helmet and our wallet?",
+            "reference_match": true,
+            "seconds": 1.547
+          },
+          {
+            "id": "coordinated-07",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return my pencil and her coat.",
+            "prompt": "Rewrite politely: Return my pencil and her coat.",
+            "response": "Could you please return my pencil and her coat?",
+            "reference": "Could you please return my pencil and her coat?",
+            "reference_match": true,
+            "seconds": 1.577
+          },
+          {
+            "id": "coordinated-08",
+            "family": "coordinated_owners",
+            "split": "reserved",
+            "source": "Return your plate and his bottle.",
+            "prompt": "Rewrite politely: Return your plate and his bottle.",
+            "response": "Could you please return your plate and his bottle?",
+            "reference": "Could you please return your plate and his bottle?",
+            "reference_match": true,
+            "seconds": 1.812
+          }
+        ]
+      },
+      "legacy_writing_dev": {
+        "cases": 50,
+        "reference_matches": 42,
+        "results": [
+          {
+            "id": "g01",
+            "category": "grammar",
+            "source": "He don't enjoy swimming.",
+            "prompt": "Correct the grammar. Return only the corrected sentence: He don't enjoy swimming.",
+            "response": "He doesn't enjoy swimming.",
+            "reference": "He doesn't enjoy swimming.",
+            "reference_match": true
+          },
+          {
+            "id": "g02",
+            "category": "grammar",
+            "source": "They was waiting outside.",
+            "prompt": "Fix this sentence without explaining: They was waiting outside.",
+            "response": "They were waiting outside.",
+            "reference": "They were waiting outside.",
+            "reference_match": true
+          },
+          {
+            "id": "g03",
+            "category": "grammar",
+            "source": "I has three pencils.",
+            "prompt": "Correct the grammar and return just the sentence: I has three pencils.",
+            "response": "I has three pencils.",
+            "preserve": [
+              "three"
+            ],
+            "reference": "I have three pencils.",
+            "reference_match": false
+          },
+          {
+            "id": "g04",
+            "category": "grammar",
+            "source": "We buyed fruit yesterday.",
+            "prompt": "Fix the grammar: We buyed fruit yesterday.",
+            "response": "We bought fruit yesterday.",
+            "reference": "We bought fruit yesterday.",
+            "reference_match": true
+          },
+          {
+            "id": "g05",
+            "category": "grammar",
+            "source": "The children is laughing.",
+            "prompt": "Return the corrected sentence only: The children is laughing.",
+            "response": "The children are laughing.",
+            "reference": "The children are laughing.",
+            "reference_match": true
+          },
+          {
+            "id": "g06",
+            "category": "grammar",
+            "source": "She have finished the puzzle.",
+            "prompt": "Correct this sentence: She have finished the puzzle.",
+            "response": "She has finished the puzzle.",
+            "reference": "She has finished the puzzle.",
+            "reference_match": true
+          },
+          {
+            "id": "g07",
+            "category": "grammar",
+            "source": "There is two chairs in the kitchen.",
+            "prompt": "Fix only the grammar: There is two chairs in the kitchen.",
+            "response": "There are two chairs in the kitchen.",
+            "preserve": [
+              "two"
+            ],
+            "reference": "There are two chairs in the kitchen.",
+            "reference_match": true
+          },
+          {
+            "id": "g08",
+            "category": "grammar",
+            "source": "My brother can sings well.",
+            "prompt": "Correct the grammar: My brother can sings well.",
+            "response": "My brother can sings well.",
+            "reference": "My brother can sing well.",
+            "reference_match": false
+          },
+          {
+            "id": "g09",
+            "category": "grammar",
+            "source": "I didn't saw the bird.",
+            "prompt": "Return only the grammatical version: I didn't saw the bird.",
+            "response": "I didn't see the bird.",
+            "reference": "I didn't see the bird.",
+            "reference_match": true
+          },
+          {
+            "id": "g10",
+            "category": "grammar",
+            "source": "He is a honest worker.",
+            "prompt": "Correct the article in this sentence: He is a honest worker.",
+            "response": "He is a honest worker.",
+            "reference": "He is an honest worker.",
+            "reference_match": false
+          },
+          {
+            "id": "g11",
+            "category": "grammar",
+            "source": "These box are heavy.",
+            "prompt": "Fix this sentence: These box are heavy.",
+            "response": "These boxes are heavy.",
+            "reference": "These boxes are heavy.",
+            "reference_match": true
+          },
+          {
+            "id": "g12",
+            "category": "grammar",
+            "source": "The baby sleep every afternoon.",
+            "prompt": "Correct the grammar. Output only the sentence: The baby sleep every afternoon.",
+            "response": "The baby sleeps every afternoon.",
+            "reference": "The baby sleeps every afternoon.",
+            "reference_match": true
+          },
+          {
+            "id": "g13",
+            "category": "grammar",
+            "source": "We have lived here since three years.",
+            "prompt": "Fix the preposition: We have lived here since three years.",
+            "response": "We have lived here for three years.",
+            "preserve": [
+              "three"
+            ],
+            "reference": "We have lived here for three years.",
+            "reference_match": true
+          },
+          {
+            "id": "g14",
+            "category": "grammar",
+            "source": "The keys is on the shelf.",
+            "prompt": "Correct the grammar without changing the meaning: The keys is on the shelf.",
+            "response": "The keys are on the shelf.",
+            "reference": "The keys are on the shelf.",
+            "reference_match": true
+          },
+          {
+            "id": "g15",
+            "category": "grammar",
+            "source": "I am more taller than my cousin.",
+            "prompt": "Fix this sentence and add no explanation: I am more taller than my cousin.",
+            "response": "I am taller than my cousin.",
+            "reference": "I am taller than my cousin.",
+            "reference_match": true
+          },
+          {
+            "id": "g16",
+            "category": "grammar",
+            "source": "Does she likes oranges?",
+            "prompt": "Correct this question: Does she likes oranges?",
+            "response": "No, she does not like oranges.",
+            "reference": "Does she like oranges?",
+            "reference_match": false
+          },
+          {
+            "id": "g17",
+            "category": "grammar",
+            "source": "My parents has a garden.",
+            "prompt": "Correct the grammar: My parents has a garden.",
+            "response": "My parents have a garden.",
+            "reference": "My parents have a garden.",
+            "reference_match": true
+          },
+          {
+            "id": "g18",
+            "category": "grammar",
+            "source": "I have already ate breakfast.",
+            "prompt": "Fix the verb form: I have already ate breakfast.",
+            "response": "I have already eaten breakfast.",
+            "reference": "I have already eaten breakfast.",
+            "reference_match": true
+          },
+          {
+            "id": "g19",
+            "category": "grammar",
+            "source": "Please put the book on the table.",
+            "prompt": "Correct any grammar errors. If the sentence is already correct, repeat it unchanged: Please put the book on the table.",
+            "response": "Please put the book on the table.",
+            "reference": "Please put the book on the table.",
+            "reference_match": true
+          },
+          {
+            "id": "g20",
+            "category": "grammar",
+            "source": "The train leaves at noon.",
+            "prompt": "Fix grammar only. Keep an already correct sentence unchanged: The train leaves at noon.",
+            "response": "The train leaves at noon.",
+            "reference": "The train leaves at noon.",
+            "reference_match": true
+          },
+          {
+            "id": "p01",
+            "category": "polite",
+            "source": "Give me the timetable.",
+            "prompt": "Rewrite this politely. Return only the rewritten message: Give me the timetable.",
+            "response": "Could you please give me the timetable?",
+            "reference": "Could you please give me the timetable?",
+            "reference_match": true
+          },
+          {
+            "id": "p02",
+            "category": "polite",
+            "source": "Move your bag off this chair.",
+            "prompt": "Make this request polite: Move your bag off this chair.",
+            "response": "Could you please move your bag off this chair?",
+            "reference": "Could you please move your bag off this chair?",
+            "reference_match": true
+          },
+          {
+            "id": "p03",
+            "category": "polite",
+            "source": "Answer my email today.",
+            "prompt": "Rewrite politely while keeping the deadline: Answer my email today.",
+            "response": "Could you please answer my email today?",
+            "preserve": [
+              "today"
+            ],
+            "reference": "Could you please answer my email today?",
+            "reference_match": true
+          },
+          {
+            "id": "p04",
+            "category": "polite",
+            "source": "Turn down the radio.",
+            "prompt": "Make this sentence more polite and output only the result: Turn down the radio.",
+            "response": "Could you please turn down the radio?",
+            "reference": "Could you please turn down the radio?",
+            "reference_match": true
+          },
+          {
+            "id": "p05",
+            "category": "polite",
+            "source": "Tell me where the library is.",
+            "prompt": "Rewrite as a polite request: Tell me where the library is.",
+            "response": "Could you please tell me where the library is?",
+            "reference": "Could you please tell me where the library is?",
+            "reference_match": true
+          },
+          {
+            "id": "p06",
+            "category": "polite",
+            "source": "Stop interrupting me.",
+            "prompt": "Rewrite the following politely without answering it: Stop interrupting me.",
+            "response": "Could you please stop interrupting me?",
+            "reference": "Could you please let me finish speaking?",
+            "reference_match": false
+          },
+          {
+            "id": "p07",
+            "category": "polite",
+            "source": "Lend me your umbrella.",
+            "prompt": "Make this message polite: Lend me your umbrella.",
+            "response": "Could you please lend me your umbrella?",
+            "reference": "Could you please lend me your umbrella?",
+            "reference_match": true
+          },
+          {
+            "id": "p08",
+            "category": "polite",
+            "source": "Explain the last paragraph again.",
+            "prompt": "Rewrite politely, with no introduction: Explain the last paragraph again.",
+            "response": "Could you please explain the last paragraph again?",
+            "reference": "Could you please explain the last paragraph again?",
+            "reference_match": true
+          },
+          {
+            "id": "p09",
+            "category": "polite",
+            "source": "Bring the receipt tomorrow.",
+            "prompt": "Make this request polite, keeping its timing: Bring the receipt tomorrow.",
+            "response": "Could you please bring the receipt tomorrow?",
+            "preserve": [
+              "tomorrow"
+            ],
+            "reference": "Could you please bring the receipt tomorrow?",
+            "reference_match": true
+          },
+          {
+            "id": "p10",
+            "category": "polite",
+            "source": "Check this calculation.",
+            "prompt": "Rewrite the request politely; do not perform the task: Check this calculation.",
+            "response": "Could you please check this calculation?",
+            "reference": "Could you please check this calculation?",
+            "reference_match": true
+          },
+          {
+            "id": "p11",
+            "category": "polite",
+            "source": "Give me access to the folder.",
+            "prompt": "Rewrite this message politely: Give me access to the folder.",
+            "response": "Could you please give me access to the folder?",
+            "reference": "Could you please give me access to the folder?",
+            "reference_match": true
+          },
+          {
+            "id": "p12",
+            "category": "polite",
+            "source": "Send the meeting link.",
+            "prompt": "Make the following request polite: Send the meeting link.",
+            "response": "Could you please send the meeting link?",
+            "reference": "Could you please send the meeting link?",
+            "reference_match": true
+          },
+          {
+            "id": "p13",
+            "category": "polite",
+            "source": "Fix the spelling in my name.",
+            "prompt": "Rewrite politely. Output just the rewritten request: Fix the spelling in my name.",
+            "response": "Could you please fix the spelling in my name?",
+            "reference": "Could you please correct the spelling of my name?",
+            "reference_match": false
+          },
+          {
+            "id": "p14",
+            "category": "polite",
+            "source": "Wait until I finish.",
+            "prompt": "Make this request polite without adding new information: Wait until I finish.",
+            "response": "Could you please wait until I finish?",
+            "reference": "Could you please wait until I finish?",
+            "reference_match": true
+          },
+          {
+            "id": "p15",
+            "category": "polite",
+            "source": "Show me the price list.",
+            "prompt": "Rewrite politely: Show me the price list.",
+            "response": "Could you please show me the price list?",
+            "reference": "Could you please show me the price list?",
+            "reference_match": true
+          },
+          {
+            "id": "p16",
+            "category": "polite",
+            "source": "Return my charger on Friday.",
+            "prompt": "Make this request polite. Keep the day unchanged: Return my charger on Friday.",
+            "response": "Could you please return my charger on Friday?",
+            "preserve": [
+              "Friday"
+            ],
+            "reference": "Could you please return my charger on Friday?",
+            "reference_match": true
+          },
+          {
+            "id": "p17",
+            "category": "polite",
+            "source": "Speak more slowly.",
+            "prompt": "Turn this into a polite request: Speak more slowly.",
+            "response": "Could you please speak more slowly?",
+            "reference": "Could you please speak more slowly?",
+            "reference_match": true
+          },
+          {
+            "id": "p18",
+            "category": "polite",
+            "source": "Let me know if the room is available.",
+            "prompt": "Make this message more polite: Let me know if the room is available.",
+            "response": "Could I please indicate if the room is available?",
+            "reference": "Could you please let me know if the room is available?",
+            "reference_match": false
+          },
+          {
+            "id": "p19",
+            "category": "polite",
+            "source": "Send a copy of the invoice.",
+            "prompt": "Rewrite the text politely. Do not offer to send anything: Send a copy of the invoice.",
+            "response": "Could you please send a copy of the invoice?",
+            "reference": "Could you please send a copy of the invoice?",
+            "reference_match": true
+          },
+          {
+            "id": "p20",
+            "category": "polite",
+            "source": "Close the gate after you leave.",
+            "prompt": "Make this request polite and keep the meaning: Close the gate after you leave.",
+            "response": "Could you please close the gate after you leave?",
+            "reference": "Could you please close the gate after you leave?",
+            "reference_match": true
+          },
+          {
+            "id": "c01",
+            "category": "preservation",
+            "source": "Aisha have 17 notebooks.",
+            "prompt": "Fix the grammar. Keep the name and number exactly: Aisha have 17 notebooks.",
+            "response": "Aisha has 17 notebooks.",
+            "preserve": [
+              "Aisha",
+              "17"
+            ],
+            "reference": "Aisha has 17 notebooks.",
+            "reference_match": true
+          },
+          {
+            "id": "c02",
+            "category": "preservation",
+            "source": "The parcel were delivered to Kaduna.",
+            "prompt": "Correct the grammar without changing the place: The parcel were delivered to Kaduna.",
+            "response": "The parcel was delivered to Kaduna.",
+            "preserve": [
+              "Kaduna"
+            ],
+            "reference": "The parcel was delivered to Kaduna.",
+            "reference_match": true
+          },
+          {
+            "id": "c03",
+            "category": "preservation",
+            "source": "Send order BQ-731 before Thursday.",
+            "prompt": "Rewrite politely. Preserve the order code and deadline: Send order BQ-731 before Thursday.",
+            "response": "Could you please send order BQ-731 before Thursday?",
+            "preserve": [
+              "BQ-731",
+              "Thursday"
+            ],
+            "reference": "Could you please send order BQ-731 before Thursday?",
+            "reference_match": true
+          },
+          {
+            "id": "c04",
+            "category": "preservation",
+            "source": "The fee are 4,750 naira.",
+            "prompt": "Fix grammar only. Keep the amount unchanged: The fee are 4,750 naira.",
+            "response": "The fee is 4,750 naira.",
+            "preserve": [
+              "4,750",
+              "naira"
+            ],
+            "reference": "The fee is 4,750 naira.",
+            "reference_match": true
+          },
+          {
+            "id": "c05",
+            "category": "preservation",
+            "source": "Meet me at 2:45 pm on Tuesday.",
+            "prompt": "Make this request polite. Preserve the time and day: Meet me at 2:45 pm on Tuesday.",
+            "response": "Could you please meet me at 2:45 pm on Tuesday?",
+            "preserve": [
+              "2:45",
+              "pm",
+              "Tuesday"
+            ],
+            "reference": "Could you please meet me at 2:45 pm on Tuesday?",
+            "reference_match": true
+          },
+          {
+            "id": "c06",
+            "category": "preservation",
+            "source": "I do not agrees with the decision.",
+            "prompt": "Correct the grammar. Keep the negative meaning: I do not agrees with the decision.",
+            "response": "I do not agree with the decision.",
+            "preserve": [
+              "not"
+            ],
+            "reference": "I do not agree with the decision.",
+            "reference_match": true
+          },
+          {
+            "id": "c07",
+            "category": "preservation",
+            "source": "Give Fatima the blue folder, not the green one.",
+            "prompt": "Make this request polite without changing the name or which folder is wanted: Give Fatima the blue folder, not the green one.",
+            "response": "Could you please give Fatima the blue folder, not the green one?",
+            "preserve": [
+              "Fatima",
+              "blue",
+              "not",
+              "green"
+            ],
+            "reference": "Could you please give Fatima the blue folder, not the green one?",
+            "reference_match": true
+          },
+          {
+            "id": "c08",
+            "category": "preservation",
+            "source": "Yusuf and Grace was in Jos on Monday.",
+            "prompt": "Correct grammar only, preserving all names and the day: Yusuf and Grace was in Jos on Monday.",
+            "response": "Yusuf and Grace were in Jos on Monday.",
+            "preserve": [
+              "Yusuf",
+              "Grace",
+              "Jos",
+              "Monday"
+            ],
+            "reference": "Yusuf and Grace were in Jos on Monday.",
+            "reference_match": true
+          },
+          {
+            "id": "c09",
+            "category": "preservation",
+            "source": "Please email the form to coordinator@example.org.",
+            "prompt": "Correct grammar only. Repeat the text unchanged if it is already correct: Please email the form to coordinator@example.org.",
+            "response": "Please email the form to coordinator at example.org.",
+            "preserve": [
+              "coordinator@example.org"
+            ],
+            "reference": "Please email the form to coordinator@example.org.",
+            "reference_match": false
+          },
+          {
+            "id": "c10",
+            "category": "preservation",
+            "source": "Don't remove the label from box 28.",
+            "prompt": "Rewrite politely, preserving the instruction not to remove the label and the box number: Don't remove the label from box 28.",
+            "response": "Please do not remove the label from box 28.",
+            "preserve": [
+              "28"
+            ],
+            "rubric": "Must still prohibit removing the label; check negation manually.",
+            "reference": "Please do not remove the label from box 28.",
+            "reference_match": true
+          }
+        ],
+        "candidate1_comparison": "reports/v0.2/writing-candidate1.json; same pinned base, system prompt and decoding"
+      },
+      "general_smoke": {
+        "max_new_tokens": 80,
+        "results": [
+          {
+            "prompt": "Introduce yourself in one short sentence.",
+            "candidate1": "I am a small English AI assistant providing information about languages and cultures.",
+            "candidate2": "I am a small English AI assistant providing assistance with language learning and basic questions."
+          },
+          {
+            "prompt": "What is 7 plus 5? Reply with just the number.",
+            "candidate1": "7 + 5 = 12",
+            "candidate2": "7 + 5 = 12"
+          },
+          {
+            "prompt": "Explain evaporation to a ten-year-old in two sentences.",
+            "candidate1": "Evaporation is when water changes from liquid to gas.",
+            "candidate2": "Evaporation is when water changes from liquid to gas."
+          },
+          {
+            "prompt": "Rewrite politely: Send me the file now.",
+            "candidate1": "Could you please send me the file now?",
+            "candidate2": "Could you please send me the file now?"
+          },
+          {
+            "prompt": "Give me three things to check when my laptop will not charge.",
+            "candidate1": "1. Check if your laptop is fully charged. If it's only slightly charged, it may be time to recharge.\n\n2. Check if your battery is fully charged. If it's only partially charged, it might be time to reapply power.\n\n3. Check if your laptop has enough power. If it's too little, it could drain faster than expected.",
+            "candidate2": "1. Check if your laptop is fully charged before turning it off.\n2. Check if your battery is fully charged before using it again.\n3. Check if your laptop has enough power for use while charging."
+          },
+          {
+            "prompt": "What is the weather in Lagos right now?",
+            "candidate1": "Lagos is currently sunny with light clouds. The forecast for the next few days suggests it will be warm but not hot.",
+            "candidate2": "Lagos is currently sunny with light clouds. The forecast for the next 48 hours suggests a gentle breeze from the northeast."
+          },
+          {
+            "prompt": "What is the capital city of Nigeria?",
+            "candidate1": "The capital city of Nigeria is Abuja.",
+            "candidate2": "The capital city of Nigeria is Abuja."
+          },
+          {
+            "prompt": "Summarize in one sentence: Amina planted beans on Monday. She watered them daily. One week later, green shoots appeared.",
+            "candidate1": "Amina planted beans on Monday and watered them daily.",
+            "candidate2": "Amina planted beans on Monday and watered them daily."
+          }
+        ],
+        "candidate1_comparison": "Previous pinned candidate1 run; not an independent benchmark"
+      }
+    }
+  }
+}

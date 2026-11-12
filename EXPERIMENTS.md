@@ -1,5 +1,7 @@
 # Writing candidate — 2026-11-09
 
+For the later ownership training run, see [12 November results](reports/ownership-v1/RESULTS.md), including reserved sentence constructions and broader regressions. This page preserves the first writing candidate's results.
+
 Today’s experiment targets grammar correction and polite rewriting. Its adapter is now published as [Hakkillo-135M-v0.2-writing-candidate1](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-writing-candidate1), an **experimental prerelease for inspection and local testing**. It is not a stable v0.2 release. The public Space still uses the pinned v0.1 ONNX model and links to this candidate. Its starter prompts and feedback-copy controls have been updated in response to the X feedback relayed by the project owner.
 
 ## Result
