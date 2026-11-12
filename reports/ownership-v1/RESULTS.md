@@ -87,3 +87,7 @@ A repeat checks reproducibility; it does not restore the reserved cases' status 
 The [ownership adapter](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-ownership-candidate2) is published for experimental inspection with these limitations. It is not promoted to the public browser chat, which remains v0.1. The next experiment should address the broader writing regressions and coordinated ownership with a new, prospectively reserved evaluation design.
 
 The publication commit and downloaded-weight checksum are recorded in [publication.json](publication.json). To inspect the checkpoint locally, install the project dependencies and set `HAKKILLO_ADAPTER=alkasima/Hakkillo-135M-v0.2-ownership-candidate2` and `HAKKILLO_ADAPTER_REVISION` to the commit in that record before running `app.py`.
+
+The [GitHub prerelease](https://github.com/alkasima/Hakkillo/releases/tag/v0.2.0-ownership-candidate2) records the tested source. All 14 Python and 9 JavaScript checks passed locally and in CI. The pinned published adapter reproduced the corrected umbrella rewrite. [verification.json](verification.json) links the CI run, publication, packaging check, and Space verification. No fresh visual browser check or candidate ONNX evaluation was performed.
+
+![Ownership gains and broader regressions](../../assets/ownership-training-2026-11-12.png)

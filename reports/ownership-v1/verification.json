@@ -1,0 +1,21 @@
+{
+  "date": "2026-11-12",
+  "source_commit": "b7c6347312da12d1e46d2ce5e57b3081f1be5ce1",
+  "preregistered_plan_commit": "9a54501ff34ac51cfe829efa22e919358190521f",
+  "github_release": "https://github.com/alkasima/Hakkillo/releases/tag/v0.2.0-ownership-candidate2",
+  "prerelease": true,
+  "ci_run": "https://github.com/alkasima/Hakkillo/actions/runs/43193524076",
+  "ci_conclusion": "success",
+  "python_tests_passed": 14,
+  "javascript_tests_passed": 9,
+  "training_steps": 384,
+  "primary_comparison_generations": 104,
+  "additional_candidate2_writing_generations": 50,
+  "additional_candidate2_general_generations": 8,
+  "model_publication_record": "reports/ownership-v1/publication.json",
+  "published_adapter_smoke_record": "reports/ownership-v1/published-smoke.json",
+  "space_deployment_record": "reports/ownership-v1/space-publication.json",
+  "candidate_promoted_to_browser": false,
+  "fresh_visual_browser_check": "Not performed for the announcement-only update; served assets, runtime, model pin and DOM tests were checked.",
+  "reference_erratum": "data/ownership-v1/reference-errata.json"
+}

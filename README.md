@@ -10,7 +10,7 @@ This is an early learning and development release. It is not pretrained from scr
 
 ## Ownership checkpoint, 12 November 2026
 
-[Experimental candidate2](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-ownership-candidate2) · [Full results and regressions](reports/ownership-v1/RESULTS.md)
+[Experimental candidate2](https://huggingface.co/alkasima/Hakkillo-135M-v0.2-ownership-candidate2) · [GitHub prerelease](https://github.com/alkasima/Hakkillo/releases/tag/v0.2.0-ownership-candidate2) · [Full results and regressions](reports/ownership-v1/RESULTS.md)
 
 Targeted CPU training reduced ownership errors from 4 to 1 in the 12 known cases. On 24 cases using sentence constructions reserved before training, matches rose from 21 to 22. The older 50-case writing test fell from 43 to 42 reference matches, with new grammar and email-preservation failures. This checkpoint is experimental; the browser chat remains v0.1.
 
