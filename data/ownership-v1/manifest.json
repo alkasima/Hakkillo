@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-12",
+  "license": "Apache-2.0",
+  "provenance": "AI-authored synthetic examples; no independent human review. Public feedback cases are evaluation only.",
+  "counts": {
+    "train": 192,
+    "dev": 16,
+    "reserved": 24,
+    "regression": 12
+  },
+  "new_training_sources": 128,
+  "replay_requests": 64,
+  "reserved_constructions": {
+    "relative_owner": "\\bthat belongs to\\b",
+    "contrast_owner": ",\\s*not (?:mine|yours|his|hers|ours|theirs)\\b",
+    "coordinated_owners": "\\b(?:my|your|his|her|our|their)\\s+\\w+\\s+and\\s+(?:my|your|his|her|our|their)\\b"
+  },
+  "sha256": {
+    "train.jsonl": "5385cca3a8694235ae76827371d75413deb7bde984923eab9b58cfc793826674",
+    "dev.jsonl": "3b4c584075516c624ee6bf0672e046c33443fe9a8b84bb1c3ec4e4b9bbb6c0d0",
+    "reserved.jsonl": "00eb06039ab2348f5688a6b48775079c528711bc592855c6b98acd0d4b6569aa",
+    "regression.jsonl": "27539a6c92af7e7663c441d4d9ae676f12f4cf9f9afcaa9f8ac9ea905459ab31"
+  },
+  "historical_training_audit": "Reserved constructions absent from candidate1's full supervised training data and the new train/dev sets. No claim about the base model's pretraining exposure.",
+  "evaluation_policy": "Freeze the data and 384-step run before training. Compare candidate1 and the one new candidate on reserved patterns only after training; do not tune on their outputs. Report regressions, familiar-pattern dev, and reserved-pattern results separately."
+}

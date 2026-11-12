@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-12",
+  "status_at_commit": "Plan and all data frozen before training or generation on the 24 reserved cases",
+  "hypothesis": "Balanced examples preserving owners and participant roles may reduce the writing candidate's ownership errors, with separately reported transfer to reserved constructions.",
+  "initial_adapter": "alkasima/Hakkillo-135M-v0.2-writing-candidate1",
+  "initial_adapter_revision": "829fc0b86824c276b8fe9b8a566c7bcd63ab41fb",
+  "initial_adapter_sha256": "6772cf97cde238a51aecd7eb8419aca100d4b43a6ce017800b3d20da08f49a84",
+  "new_adapter": "artifacts/hakkillo-135m-v0.2-ownership-candidate2",
+  "training": {"steps": 384, "epochs_over_192_requests": 2, "learning_rate": 0.0001, "batch_size": 1, "threads": 4, "seed": 42, "max_length": 256, "dtype": "float32", "device": "cpu", "optimizer": "fresh AdamW; continue adapter weights, not optimizer state"},
+  "data_sha256": {
+    "train.jsonl": "5385cca3a8694235ae76827371d75413deb7bde984923eab9b58cfc793826674",
+    "dev.jsonl": "3b4c584075516c624ee6bf0672e046c33443fe9a8b84bb1c3ec4e4b9bbb6c0d0",
+    "reserved.jsonl": "00eb06039ab2348f5688a6b48775079c528711bc592855c6b98acd0d4b6569aa",
+    "regression.jsonl": "27539a6c92af7e7663c441d4d9ae676f12f4cf9f9afcaa9f8ac9ea905459ab31"
+  },
+  "evaluation": {"models": ["published writing candidate1", "single new ownership candidate2"], "groups": {"regression": 12, "dev": 16, "reserved": 24}, "generation": {"max_new_tokens": 64, "repetition_penalty": 1.08, "do_sample": false, "history": []}, "prompt": "Rewrite politely: {source}", "review": "Compare complete outputs with case requirements; report ownership, negation, action and extra invented information. Exact reference matches are only a diagnostic, not semantic accuracy.", "additional_checks": "Existing 50 writing-development prompts and original general smoke cases for regression inspection; no old reserved holdout."},
+  "selection_policy": "One fixed training run. No hyperparameter or example changes in response to reserved outputs. Review all outputs and report per construction. Any later tuned run needs newly reserved patterns/data to support a fresh generalization claim.",
+  "promotion_policy": "No automatic stable or browser promotion. Any published adapter must remain experimental and include its failures and evaluation scope."
+}
